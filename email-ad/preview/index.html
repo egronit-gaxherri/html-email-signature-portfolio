@@ -1,0 +1,82 @@
+<!--
+  Email Advertisement — Browser Preview harness.
+  Testing aid only; never sent. Loads ../dist/email-ad.html in an
+  iframe so what you see here is the exact file that ships.
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Browser Preview — Email Advertisement | Northstar Digital Solutions</title>
+  <meta name="description" content="Browser preview harness for the Northstar Digital Solutions promotional email. Not a substitute for email client testing." />
+  <meta name="robots" content="noindex" />
+  <link rel="stylesheet" href="preview.css" />
+</head>
+<body>
+
+  <div class="shell">
+
+    <div class="banner" role="note">
+      <div class="banner__icon" aria-hidden="true">⚠</div>
+      <div>
+        <p class="banner__title">Browser Preview — Not an Outlook Rendering Test</p>
+        <p class="banner__body">
+          This page renders the email in your web browser. Outlook Classic renders through
+          Microsoft Word and discards the entire <code>&lt;style&gt;</code> block — including the
+          responsive rules you can see working below. What Outlook shows is the inline 600px
+          fallback, and the VML button rather than the CSS one. A correct result here does
+          <strong>not</strong> prove correct rendering in any email client. See
+          <code>docs/OUTLOOK.md</code>.
+        </p>
+      </div>
+    </div>
+
+    <header class="page-head">
+      <p class="page-head__eyebrow">Preview Harness</p>
+      <h1 class="page-head__title">Corporate Email Advertisement</h1>
+      <p class="page-head__desc">
+        Northstar Digital Solutions — promotional campaign email. Loaded directly from
+        <code>../dist/email-ad.html</code>, the production build. The narrow frame below is a
+        genuine 375px viewport, so the email's own <code>@media (max-width: 620px)</code> rules
+        really do fire — this is a real responsive check, not a mock-up.
+      </p>
+    </header>
+
+    <!-- Desktop viewport -->
+    <section class="viewport">
+      <h2 class="viewport__label">Desktop viewport <span>— 600px card on canvas</span></h2>
+      <div class="stage">
+        <div class="stage__chrome">
+          From: <b>Northstar Digital Solutions</b> &nbsp;·&nbsp; Subject: <b>Transform Your Business with Smarter Digital Solutions</b>
+        </div>
+        <iframe class="ad-frame" src="../dist/email-ad.html" title="Email advertisement, desktop rendering" loading="lazy"></iframe>
+      </div>
+    </section>
+
+    <!-- Mobile viewport -->
+    <section class="viewport">
+      <h2 class="viewport__label">Mobile viewport <span>— 375px, media queries active</span></h2>
+      <div class="stage stage--narrow">
+        <div class="stage__chrome stage__chrome--center">iPhone Mail — 9:41</div>
+        <iframe class="ad-frame ad-frame--mobile" src="../dist/email-ad.html" title="Email advertisement, mobile rendering" loading="lazy"></iframe>
+      </div>
+    </section>
+
+    <section class="notes">
+      <h2 class="notes__title">What this preview does and does not show</h2>
+      <ul>
+        <li><strong>Shown:</strong> the responsive breakpoint working — full-width container, fluid hero image, 20px mobile gutters, reduced headline size, and the full-width CTA.</li>
+        <li><strong>Shown:</strong> the CSS button. Outlook sees the <code>&lt;v:roundrect&gt;</code> VML button instead, which is hidden from every non-Outlook client by conditional comments.</li>
+        <li><strong>Not shown:</strong> the Outlook ghost table. The <code>&lt;!--[if mso]&gt;</code> 600px wrapper exists because Outlook honours neither <code>max-width</code> nor <code>margin: auto</code>.</li>
+        <li><strong>Not shown:</strong> the hidden preheader text, which appears next to the subject line in inbox list views, not in the message body.</li>
+        <li><strong>Not shown:</strong> Gmail's ~102KB clipping threshold, spam filtering, or deliverability. Run those checks separately — see <code>docs/TESTING.md</code>.</li>
+        <li><strong>Image paths:</strong> the production file uses relative paths so this preview works offline. Swap them for absolute HTTPS URLs before sending — see <code>docs/DEPLOYMENT.md</code>.</li>
+        <li><strong>Local server:</strong> if the frames above are empty, you opened this over <code>file://</code>. Some browsers block local iframes. Serve the project over HTTP instead — see the README.</li>
+      </ul>
+    </section>
+
+  </div>
+
+</body>
+</html>

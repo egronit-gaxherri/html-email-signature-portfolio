@@ -1,0 +1,276 @@
+/* =============================================================
+   Email Advertisement — DEVELOPMENT STYLESHEET
+   Northstar Digital Solutions
+   -------------------------------------------------------------
+   THIS FILE IS NOT SHIPPED AS A STYLESHEET.
+
+   Sections 1-8 are hand-inlined onto elements in:
+
+       ../dist/email-ad.html
+
+   Section 9 (the responsive overrides) is the one part that
+   CANNOT be inlined — media queries only work from a <style>
+   block, so that block is embedded in the <head> of the dist
+   file as a progressive enhancement. Outlook strips it; the
+   inline 600px layout is the Outlook fallback and is designed
+   to be acceptable on its own.
+
+   Keep this file and dist/ in sync. See docs/DEPLOYMENT.md.
+   ============================================================= */
+
+/* -------------------------------------------------------------
+   1. Design tokens (development convenience only)
+   ------------------------------------------------------------- */
+:root {
+  --brand:       #1a6b54;
+  --brand-dark:  #12503e;
+  --canvas:      #f4f4f4;  /* Page background behind the card */
+  --surface:     #ffffff;  /* Email card background           */
+  --ink:         #1a1a1a;
+  --ink-body:    #444444;
+  --ink-muted:   #888888;
+  --ink-fine:    #aaaaaa;
+  --rule:        #e0e0e0;
+  --font-stack:  Arial, Helvetica, sans-serif;
+  --width:       600px;    /* Industry-standard email width   */
+}
+
+/* -------------------------------------------------------------
+   2. Email resets
+   ------------------------------------------------------------- */
+body {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  background-color: var(--canvas);
+  -webkit-text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%;
+}
+
+table {
+  border-collapse: collapse;
+  mso-table-lspace: 0pt;
+  mso-table-rspace: 0pt;
+}
+
+img {
+  border: 0;
+  outline: none;
+  display: block;
+  line-height: 100%;
+  text-decoration: none;
+  -ms-interpolation-mode: bicubic;
+}
+
+a { text-decoration: none; }
+
+/* Hidden preheader: the text shown next to the subject line in
+   most inbox list views. mso-hide:all keeps it out of Outlook. */
+.preheader {
+  display: none;
+  font-size: 1px;
+  line-height: 1px;
+  max-height: 0;
+  max-width: 0;
+  opacity: 0;
+  overflow: hidden;
+  mso-hide: all;
+}
+
+/* -------------------------------------------------------------
+   3. Structure
+   ------------------------------------------------------------- */
+.canvas {
+  background-color: var(--canvas);
+  width: 100%;
+}
+
+.canvas__cell {
+  padding: 24px 0;
+}
+
+.email {
+  width: var(--width);
+  margin: 0 auto;
+  background-color: var(--surface);
+}
+
+/* Horizontal gutter used by every content row. Reduced on mobile
+   by the .mobile-padding override in section 9. */
+.row {
+  padding-left: 40px;
+  padding-right: 40px;
+}
+
+/* -------------------------------------------------------------
+   4. Header + hero
+   ------------------------------------------------------------- */
+.header {
+  padding: 28px 40px;
+  background-color: var(--surface);
+}
+
+.header__logo {
+  display: block;
+  border: 0;
+}
+
+.hero {
+  padding: 0;
+}
+
+/* 1200x600 asset displayed at 600x300; goes fluid under 620px */
+.hero__img {
+  display: block;
+  border: 0;
+  width: 100%;
+  max-width: 600px;
+  height: auto;
+}
+
+/* -------------------------------------------------------------
+   5. Copy
+   ------------------------------------------------------------- */
+.headline {
+  margin: 0;
+  font-family: var(--font-stack);
+  font-size: 26px;
+  font-weight: bold;
+  color: var(--ink);
+  line-height: 34px;
+  mso-line-height-rule: exactly;
+}
+
+.headline-row { padding: 36px 40px 16px 40px; }
+
+.body-row     { padding: 0 40px 8px 40px; }
+
+.body-copy {
+  margin: 0 0 16px 0;
+  font-family: var(--font-stack);
+  font-size: 15px;
+  color: var(--ink-body);
+  line-height: 24px;
+  mso-line-height-rule: exactly;
+}
+
+.body-copy--last { margin-bottom: 0; }
+
+/* -------------------------------------------------------------
+   6. Benefit list
+      Built from table rows + an HTML entity checkmark, not images,
+      so it survives image blocking.
+   ------------------------------------------------------------- */
+.benefits-row { padding: 16px 40px 24px 40px; }
+
+.benefit {
+  font-family: var(--font-stack);
+  font-size: 14px;
+  color: var(--ink);
+  line-height: 22px;
+  mso-line-height-rule: exactly;
+  padding: 0 0 12px 0;
+}
+
+.benefit--last { padding-bottom: 0; }
+
+.benefit__check {
+  color: var(--brand);
+  font-weight: bold;
+  font-size: 16px;
+}
+
+/* -------------------------------------------------------------
+   7. CTA button
+      Bulletproof pattern: a padded <a> for everything, plus a VML
+      <v:roundrect> that only Outlook sees. Both are in dist/.
+   ------------------------------------------------------------- */
+.cta-row { padding: 8px 40px 36px 40px; }
+
+.cta__shell {
+  border-radius: 5px;
+  background-color: var(--brand);
+}
+
+.cta__link {
+  display: inline-block;
+  padding: 13px 32px;
+  font-family: var(--font-stack);
+  font-size: 15px;
+  font-weight: bold;
+  color: #ffffff;
+  text-decoration: none;
+  border-radius: 5px;
+  background-color: var(--brand);
+  line-height: 20px;
+  mso-line-height-rule: exactly;
+}
+
+/* -------------------------------------------------------------
+   8. Divider + footer
+   ------------------------------------------------------------- */
+.divider-row { padding: 0 40px; }
+
+.divider {
+  border-top: 1px solid var(--rule);
+  font-size: 1px;
+  line-height: 1px;
+  height: 1px;
+  mso-line-height-rule: exactly;
+}
+
+.footer-row { padding: 24px 40px 28px 40px; }
+
+.footer {
+  font-family: var(--font-stack);
+  font-size: 12px;
+  color: var(--ink-muted);
+  line-height: 18px;
+  mso-line-height-rule: exactly;
+}
+
+.footer__link       { color: var(--ink-muted); text-decoration: none; }
+.footer__link--brand{ color: var(--brand);     text-decoration: none; }
+
+.footer-legal {
+  padding-top: 12px;
+  font-family: var(--font-stack);
+  font-size: 11px;
+  color: var(--ink-fine);
+  line-height: 16px;
+  mso-line-height-rule: exactly;
+}
+
+.footer-legal a { color: var(--ink-fine); text-decoration: underline; }
+
+/* -------------------------------------------------------------
+   9. RESPONSIVE OVERRIDES
+      The only rules that must stay in a <style> block. Mirrored
+      verbatim in the <head> of dist/email-ad.html.
+
+      !important is required here: it is the only way an embedded
+      rule can beat the inline styles it needs to override.
+   ------------------------------------------------------------- */
+@media only screen and (max-width: 620px) {
+  .email {
+    width: 100% !important;
+    max-width: 100% !important;
+  }
+  .hero__img {
+    width: 100% !important;
+    max-width: 100% !important;
+    height: auto !important;
+  }
+  .mobile-padding {
+    padding-left: 20px !important;
+    padding-right: 20px !important;
+  }
+  .headline {
+    font-size: 22px !important;
+    line-height: 29px !important;
+  }
+  .cta__link {
+    display: block !important;
+    text-align: center !important;
+  }
+}

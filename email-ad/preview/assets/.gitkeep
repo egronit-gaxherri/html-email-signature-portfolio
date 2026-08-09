@@ -1,0 +1,7 @@
+Assets used only by the preview harness (not by the email itself).
+
+Currently empty: the harness is styled entirely by preview.css, and the
+advertisement is loaded in an iframe from ../dist/email-ad.html, so it brings
+its own images from email-ad/src/assets/.
+
+Nothing in this directory is ever sent in an email.

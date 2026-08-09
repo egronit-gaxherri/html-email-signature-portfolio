@@ -1,0 +1,5 @@
+Portfolio raster imagery (screenshots, photography, OG share image).
+
+Currently empty: the project mock-ups on the site are built from HTML and CSS
+rather than images, so they stay crisp at any resolution and adapt to the
+page's own design tokens.

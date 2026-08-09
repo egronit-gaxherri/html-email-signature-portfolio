@@ -1,0 +1,210 @@
+<!--
+  ==================================================================
+  HTML Email Signature — PRODUCTION BUILD
+  Northstar Digital Solutions
+  Developer: Niko (Egronit Gaxherri)
+  ==================================================================
+
+  This is the file you paste into an email client. Every style is
+  inlined; nothing depends on <link>, <style>, JavaScript, web fonts,
+  flexbox, grid, or any external CSS.
+
+  ------------------------------------------------------------------
+  BEFORE YOU DEPLOY — REPLACE THE IMAGE PATHS
+  ------------------------------------------------------------------
+  Image src values below are RELATIVE (../src/assets/...) so the
+  browser preview works offline. Relative and file:// paths NEVER
+  load inside an email client. Upload the three PNG assets to an
+  HTTPS host, then run one find/replace over this file:
+
+      ../src/assets/   ->   https://your-cdn.example.com/northstar/
+
+  Or from the project root:
+
+      sed -i '' 's|\.\./src/assets/|https://your-cdn.example.com/northstar/|g' \
+        email-signature/dist/signature.html
+
+  Full instructions: docs/DEPLOYMENT.md
+  ------------------------------------------------------------------
+
+  Compatibility approach (see docs/OUTLOOK.md for the reasoning):
+    - Table-based layout only; no div/flex/grid positioning
+    - Inline CSS on every element that carries visual meaning
+    - MSO conditional block for the properties Outlook honours
+    - o:PixelsPerInch = 96 to stop Word DPI upscaling of images
+    - o:AllowPNG so Outlook does not transcode PNG to BMP
+    - border-collapse + mso-table-lspace/rspace to kill phantom gaps
+    - mso-line-height-rule:exactly so line-height is respected
+    - display:block on every image to remove the Outlook image gap
+    - 2x images with explicit width/height for retina clarity
+    - Arial/Helvetica/sans-serif only — no @font-face
+    - tel:, mailto:, https:, and Google Maps links all clickable
+
+  STATUS: Designed for compatibility. Requires final verification in
+  each target email client — no live client testing has been run.
+  ==================================================================
+-->
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:v="urn:schemas-microsoft-com:vml" xmlns:o="urn:schemas-microsoft-com:office:office" lang="en">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="x-apple-disable-message-reformatting" content="" />
+  <meta name="color-scheme" content="light dark" />
+  <meta name="supported-color-schemes" content="light dark" />
+  <title>Alex Morgan — Northstar Digital Solutions</title>
+
+  <!--[if gte mso 9]>
+  <xml>
+    <o:OfficeDocumentSettings>
+      <o:AllowPNG/>
+      <o:PixelsPerInch>96</o:PixelsPerInch>
+    </o:OfficeDocumentSettings>
+  </xml>
+  <![endif]-->
+
+  <!--[if mso]>
+  <style type="text/css">
+    table, td { border-collapse: collapse; mso-table-lspace: 0pt; mso-table-rspace: 0pt; }
+    td, span, a { font-family: Arial, Helvetica, sans-serif !important; }
+    .mso-fix { mso-line-height-rule: exactly; }
+  </style>
+  <![endif]-->
+</head>
+<body style="margin:0; padding:0; -webkit-text-size-adjust:100%; -ms-text-size-adjust:100%;">
+
+<!-- =============================================================
+     SIGNATURE BLOCK — copy from here...
+     ============================================================= -->
+<table role="presentation" cellpadding="0" cellspacing="0" border="0" align="left" style="max-width:600px; font-family:Arial, Helvetica, sans-serif; border-collapse:collapse; mso-table-lspace:0pt; mso-table-rspace:0pt;">
+  <tr>
+    <td style="padding:0; vertical-align:top;">
+
+      <table role="presentation" cellpadding="0" cellspacing="0" border="0" style="border-collapse:collapse; mso-table-lspace:0pt; mso-table-rspace:0pt;">
+
+        <!-- Brand rule -->
+        <tr>
+          <td colspan="2" style="padding:0 0 16px 0;">
+            <table role="presentation" cellpadding="0" cellspacing="0" border="0" width="100%" style="border-collapse:collapse; mso-table-lspace:0pt; mso-table-rspace:0pt;">
+              <tr>
+                <td style="border-top:3px solid #1a6b54; font-size:1px; line-height:1px; height:1px; mso-line-height-rule:exactly;">&nbsp;</td>
+              </tr>
+            </table>
+          </td>
+        </tr>
+
+        <!-- Logo + identity -->
+        <tr>
+          <!-- Logo column: fixed width keeps the content column fluid -->
+          <td style="vertical-align:top; padding:0 20px 0 0; width:60px;">
+            <img src="../src/assets/logo/northstar-logo-100.png"
+                 alt="Northstar Digital Solutions"
+                 width="50" height="50"
+                 style="display:block; border:0; outline:none; text-decoration:none; -ms-interpolation-mode:bicubic; border-radius:6px;" />
+          </td>
+
+          <!-- Content column -->
+          <td style="vertical-align:top; padding:0;">
+
+            <!-- Name -->
+            <table role="presentation" cellpadding="0" cellspacing="0" border="0" style="border-collapse:collapse; mso-table-lspace:0pt; mso-table-rspace:0pt;">
+              <tr>
+                <td style="font-family:Arial, Helvetica, sans-serif; font-size:17px; font-weight:bold; color:#1a1a1a; line-height:22px; mso-line-height-rule:exactly; padding:0 0 2px 0;">Alex Morgan</td>
+              </tr>
+            </table>
+
+            <!-- Job title -->
+            <table role="presentation" cellpadding="0" cellspacing="0" border="0" style="border-collapse:collapse; mso-table-lspace:0pt; mso-table-rspace:0pt;">
+              <tr>
+                <td style="font-family:Arial, Helvetica, sans-serif; font-size:13px; color:#555555; line-height:18px; mso-line-height-rule:exactly; letter-spacing:0.3px; padding:0 0 2px 0;">Senior Technology Consultant</td>
+              </tr>
+            </table>
+
+            <!-- Company -->
+            <table role="presentation" cellpadding="0" cellspacing="0" border="0" style="border-collapse:collapse; mso-table-lspace:0pt; mso-table-rspace:0pt;">
+              <tr>
+                <td style="font-family:Arial, Helvetica, sans-serif; font-size:13px; font-weight:bold; color:#1a6b54; line-height:18px; mso-line-height-rule:exactly; letter-spacing:0.3px; padding:0 0 12px 0;">Northstar Digital Solutions</td>
+              </tr>
+            </table>
+
+            <!-- Hairline -->
+            <table role="presentation" cellpadding="0" cellspacing="0" border="0" width="100%" style="border-collapse:collapse; mso-table-lspace:0pt; mso-table-rspace:0pt;">
+              <tr>
+                <td style="border-top:1px solid #d9d9d9; font-size:1px; line-height:1px; height:1px; mso-line-height-rule:exactly; padding:0 0 12px 0;">&nbsp;</td>
+              </tr>
+            </table>
+
+            <!-- Contact details — live text, never baked into an image -->
+            <table role="presentation" cellpadding="0" cellspacing="0" border="0" style="border-collapse:collapse; mso-table-lspace:0pt; mso-table-rspace:0pt;">
+
+              <!-- Phone -->
+              <tr>
+                <td style="font-family:Arial, Helvetica, sans-serif; font-size:12px; color:#555555; line-height:20px; mso-line-height-rule:exactly; padding:0 0 3px 0; white-space:nowrap;">
+                  <span style="color:#8a8a8a; font-family:Arial, Helvetica, sans-serif; font-size:12px;">P:</span>&nbsp;&nbsp;<a href="tel:+13105550187" style="color:#1a1a1a; text-decoration:none; font-family:Arial, Helvetica, sans-serif; font-size:12px;">+1 (310) 555-0187</a>
+                </td>
+              </tr>
+
+              <!-- Email -->
+              <tr>
+                <td style="font-family:Arial, Helvetica, sans-serif; font-size:12px; color:#555555; line-height:20px; mso-line-height-rule:exactly; padding:0 0 3px 0; white-space:nowrap;">
+                  <span style="color:#8a8a8a; font-family:Arial, Helvetica, sans-serif; font-size:12px;">E:</span>&nbsp;&nbsp;<a href="mailto:alex.morgan@northstardigital.com" style="color:#1a6b54; text-decoration:none; font-family:Arial, Helvetica, sans-serif; font-size:12px;">alex.morgan@northstardigital.com</a>
+                </td>
+              </tr>
+
+              <!-- Website -->
+              <tr>
+                <td style="font-family:Arial, Helvetica, sans-serif; font-size:12px; color:#555555; line-height:20px; mso-line-height-rule:exactly; padding:0 0 3px 0; white-space:nowrap;">
+                  <span style="color:#8a8a8a; font-family:Arial, Helvetica, sans-serif; font-size:12px;">W:</span>&nbsp;&nbsp;<a href="https://www.northstardigital.com" target="_blank" style="color:#1a6b54; text-decoration:none; font-family:Arial, Helvetica, sans-serif; font-size:12px;">www.northstardigital.com</a>
+                </td>
+              </tr>
+
+              <!-- Address — deliberately allowed to wrap; nowrap here
+                   overflows narrow mobile viewports -->
+              <tr>
+                <td style="font-family:Arial, Helvetica, sans-serif; font-size:12px; color:#555555; line-height:20px; mso-line-height-rule:exactly; padding:0 0 3px 0;">
+                  <span style="color:#8a8a8a; font-family:Arial, Helvetica, sans-serif; font-size:12px;">A:</span>&nbsp;&nbsp;<a href="https://www.google.com/maps/search/?api=1&amp;query=1234+Wilshire+Blvd+Los+Angeles+CA+90017" target="_blank" style="color:#1a1a1a; text-decoration:none; font-family:Arial, Helvetica, sans-serif; font-size:12px;">1234 Wilshire Blvd, Los Angeles, CA 90017</a>
+                </td>
+              </tr>
+
+            </table>
+
+            <!-- Social icons — 48px assets rendered at 24px -->
+            <table role="presentation" cellpadding="0" cellspacing="0" border="0" style="border-collapse:collapse; mso-table-lspace:0pt; mso-table-rspace:0pt; margin-top:12px;">
+              <tr>
+                <td style="padding:12px 8px 0 0;">
+                  <a href="https://www.linkedin.com/company/northstardigital" target="_blank" style="text-decoration:none;"><img src="../src/assets/icons/linkedin-48.png" alt="LinkedIn" width="24" height="24" style="display:block; border:0; outline:none; text-decoration:none; -ms-interpolation-mode:bicubic; border-radius:4px;" /></a>
+                </td>
+                <td style="padding:12px 8px 0 0;">
+                  <a href="https://x.com/northstardigital" target="_blank" style="text-decoration:none;"><img src="../src/assets/icons/x-48.png" alt="X" width="24" height="24" style="display:block; border:0; outline:none; text-decoration:none; -ms-interpolation-mode:bicubic; border-radius:4px;" /></a>
+                </td>
+                <td style="padding:12px 0 0 0;">
+                  <a href="https://www.facebook.com/northstardigital" target="_blank" style="text-decoration:none;"><img src="../src/assets/icons/facebook-48.png" alt="Facebook" width="24" height="24" style="display:block; border:0; outline:none; text-decoration:none; -ms-interpolation-mode:bicubic; border-radius:4px;" /></a>
+                </td>
+              </tr>
+            </table>
+
+          </td>
+        </tr>
+
+        <!-- Confidentiality notice -->
+        <tr>
+          <td colspan="2" style="padding:16px 0 0 0;">
+            <table role="presentation" cellpadding="0" cellspacing="0" border="0" width="100%" style="border-collapse:collapse; mso-table-lspace:0pt; mso-table-rspace:0pt;">
+              <tr>
+                <td style="font-family:Arial, Helvetica, sans-serif; font-size:10px; color:#999999; line-height:14px; mso-line-height-rule:exactly;">This email and any attachments are confidential. If you have received this message in error, please notify the sender and delete it immediately.</td>
+              </tr>
+            </table>
+          </td>
+        </tr>
+
+      </table>
+
+    </td>
+  </tr>
+</table>
+<!-- =============================================================
+     ...copy to here.
+     ============================================================= -->
+
+</body>
+</html>

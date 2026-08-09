@@ -1,0 +1,220 @@
+<!--
+  ==================================================================
+  Corporate Email Advertisement — PRODUCTION BUILD
+  Northstar Digital Solutions
+  Developer: Niko (Egronit Gaxherri)
+  ==================================================================
+
+  Send-ready. All layout-critical CSS is inlined. The only <style>
+  block is the responsive override set, which cannot be inlined
+  because media queries do not exist as inline styles. Outlook
+  discards that block; the inline 600px layout is its fallback.
+
+  ------------------------------------------------------------------
+  BEFORE YOU DEPLOY — REPLACE THE IMAGE PATHS
+  ------------------------------------------------------------------
+  src values are RELATIVE (../src/assets/...) so the browser preview
+  works offline. Relative and file:// paths NEVER load in an email
+  client. Upload the PNGs to HTTPS hosting, then find/replace:
+
+      ../src/assets/   ->   https://your-cdn.example.com/northstar/
+
+  Or from the project root:
+
+      sed -i '' 's|\.\./src/assets/|https://your-cdn.example.com/northstar/|g' \
+        email-ad/dist/email-ad.html
+
+  Full instructions: docs/DEPLOYMENT.md
+  ------------------------------------------------------------------
+
+  Techniques applied (reasoning in docs/OUTLOOK.md):
+    - Ghost table: <!--[if mso]> fixed-width 600px wrapper, because
+      Outlook ignores max-width and margin:auto centring
+    - VML <v:roundrect> CTA with <w:anchorlock> so Outlook gets a
+      real, fully clickable, styled button
+    - o:AllowPNG + o:PixelsPerInch 96 against Word DPI scaling
+    - mso-line-height-rule:exactly on every text cell
+    - Hidden preheader with mso-hide:all
+    - Entity checkmarks instead of icon images (survive image block)
+    - Fluid hero image under 620px
+    - No JavaScript, no web fonts, no external CSS, no grid/flex
+
+  STATUS: Designed for compatibility. Requires final verification in
+  each target email client — no live client testing has been run.
+  ==================================================================
+-->
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:v="urn:schemas-microsoft-com:vml" xmlns:o="urn:schemas-microsoft-com:office:office" lang="en">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="x-apple-disable-message-reformatting" content="" />
+  <meta name="color-scheme" content="light dark" />
+  <meta name="supported-color-schemes" content="light dark" />
+  <title>Transform Your Business — Northstar Digital Solutions</title>
+
+  <!--[if gte mso 9]>
+  <xml>
+    <o:OfficeDocumentSettings>
+      <o:AllowPNG/>
+      <o:PixelsPerInch>96</o:PixelsPerInch>
+    </o:OfficeDocumentSettings>
+  </xml>
+  <![endif]-->
+
+  <!--[if mso]>
+  <style type="text/css">
+    table, td { border-collapse: collapse; mso-table-lspace: 0pt; mso-table-rspace: 0pt; }
+    td, span, a, h1, p { font-family: Arial, Helvetica, sans-serif !important; }
+  </style>
+  <![endif]-->
+
+  <style type="text/css">
+    /* Client resets — belt and braces alongside the inline styles */
+    body, table, td, a { -webkit-text-size-adjust: 100%; -ms-text-size-adjust: 100%; }
+    table, td { mso-table-lspace: 0pt; mso-table-rspace: 0pt; }
+    img { -ms-interpolation-mode: bicubic; border: 0; height: auto; line-height: 100%; outline: none; text-decoration: none; }
+    body { margin: 0 !important; padding: 0 !important; width: 100% !important; }
+
+    /* Responsive overrides. These cannot be inlined — a media query
+       has no inline equivalent. !important is required so embedded
+       rules can beat the inline styles they override. Outlook strips
+       this whole block; the inline 600px layout is its fallback. */
+    @media only screen and (max-width: 620px) {
+      .email-container { width: 100% !important; max-width: 100% !important; }
+      .fluid-img       { width: 100% !important; max-width: 100% !important; height: auto !important; }
+      .mobile-padding  { padding-left: 20px !important; padding-right: 20px !important; }
+      .mobile-headline { font-size: 22px !important; line-height: 29px !important; }
+      .cta-link        { display: block !important; text-align: center !important; }
+    }
+  </style>
+</head>
+<body style="margin:0; padding:0; width:100%; background-color:#f4f4f4;">
+
+  <!-- Inbox preview text -->
+  <div style="display:none; font-size:1px; line-height:1px; max-height:0px; max-width:0px; opacity:0; overflow:hidden; mso-hide:all;">Smarter digital strategies that drive measurable results. Let's transform your business together.</div>
+
+  <!-- Full-bleed canvas -->
+  <table role="presentation" cellpadding="0" cellspacing="0" border="0" width="100%" style="background-color:#f4f4f4; border-collapse:collapse; mso-table-lspace:0pt; mso-table-rspace:0pt;">
+    <tr>
+      <td align="center" style="padding:24px 0;">
+
+        <!--[if mso]>
+        <table role="presentation" cellpadding="0" cellspacing="0" border="0" width="600" align="center"><tr><td>
+        <![endif]-->
+
+        <!-- 600px email card -->
+        <table class="email-container" role="presentation" cellpadding="0" cellspacing="0" border="0" width="600" align="center" style="width:600px; max-width:600px; margin:0 auto; background-color:#ffffff; border-collapse:collapse; mso-table-lspace:0pt; mso-table-rspace:0pt;">
+
+          <!-- Header -->
+          <tr>
+            <td class="mobile-padding" style="padding:28px 40px; background-color:#ffffff;">
+              <img src="../src/assets/northstar-wordmark-320.png" alt="Northstar Digital Solutions" width="160" height="40" style="display:block; border:0; outline:none; -ms-interpolation-mode:bicubic;" />
+            </td>
+          </tr>
+
+          <!-- Hero -->
+          <tr>
+            <td style="padding:0; font-size:0; line-height:0;">
+              <img class="fluid-img" src="../src/assets/hero-1200.png" alt="Abstract data visualisation representing digital transformation: an upward trend line over a grid" width="600" height="300" style="display:block; border:0; outline:none; width:100%; max-width:600px; height:auto; -ms-interpolation-mode:bicubic;" />
+            </td>
+          </tr>
+
+          <!-- Headline -->
+          <tr>
+            <td class="mobile-padding" style="padding:36px 40px 16px 40px;">
+              <h1 class="mobile-headline" style="margin:0; font-family:Arial, Helvetica, sans-serif; font-size:26px; font-weight:bold; color:#1a1a1a; line-height:34px; mso-line-height-rule:exactly;">Transform Your Business with Smarter Digital Solutions</h1>
+            </td>
+          </tr>
+
+          <!-- Body copy -->
+          <tr>
+            <td class="mobile-padding" style="padding:0 40px 8px 40px;">
+              <p style="margin:0 0 16px 0; font-family:Arial, Helvetica, sans-serif; font-size:15px; color:#444444; line-height:24px; mso-line-height-rule:exactly;">Every organisation has untapped potential in its digital operations. At Northstar Digital Solutions, we help businesses in Los Angeles and across the country identify opportunities, streamline workflows, and build technology foundations that scale.</p>
+              <p style="margin:0; font-family:Arial, Helvetica, sans-serif; font-size:15px; color:#444444; line-height:24px; mso-line-height-rule:exactly;">Whether you need to modernise a legacy system, optimise your cloud infrastructure, or develop a data strategy that drives real decisions &mdash; our team brings hands-on experience and a consultative approach to every engagement.</p>
+            </td>
+          </tr>
+
+          <!-- Benefits — entity checkmarks survive image blocking -->
+          <tr>
+            <td class="mobile-padding" style="padding:16px 40px 24px 40px;">
+              <table role="presentation" cellpadding="0" cellspacing="0" border="0" width="100%" style="border-collapse:collapse; mso-table-lspace:0pt; mso-table-rspace:0pt;">
+                <tr>
+                  <td style="padding:0 0 12px 0; font-family:Arial, Helvetica, sans-serif; font-size:14px; color:#1a1a1a; line-height:22px; mso-line-height-rule:exactly;"><span style="color:#1a6b54; font-weight:bold; font-size:16px;">&#10003;</span>&nbsp;&nbsp;<strong>Technology Consulting</strong> &mdash; Strategic guidance for digital transformation</td>
+                </tr>
+                <tr>
+                  <td style="padding:0 0 12px 0; font-family:Arial, Helvetica, sans-serif; font-size:14px; color:#1a1a1a; line-height:22px; mso-line-height-rule:exactly;"><span style="color:#1a6b54; font-weight:bold; font-size:16px;">&#10003;</span>&nbsp;&nbsp;<strong>Cloud Architecture</strong> &mdash; Scalable, secure infrastructure design</td>
+                </tr>
+                <tr>
+                  <td style="padding:0 0 12px 0; font-family:Arial, Helvetica, sans-serif; font-size:14px; color:#1a1a1a; line-height:22px; mso-line-height-rule:exactly;"><span style="color:#1a6b54; font-weight:bold; font-size:16px;">&#10003;</span>&nbsp;&nbsp;<strong>Data &amp; Analytics</strong> &mdash; Actionable insights from your business data</td>
+                </tr>
+                <tr>
+                  <td style="padding:0; font-family:Arial, Helvetica, sans-serif; font-size:14px; color:#1a1a1a; line-height:22px; mso-line-height-rule:exactly;"><span style="color:#1a6b54; font-weight:bold; font-size:16px;">&#10003;</span>&nbsp;&nbsp;<strong>Process Automation</strong> &mdash; Reduce manual work, increase accuracy</td>
+                </tr>
+              </table>
+            </td>
+          </tr>
+
+          <!-- CTA button -->
+          <tr>
+            <td class="mobile-padding" style="padding:8px 40px 36px 40px;">
+              <table role="presentation" cellpadding="0" cellspacing="0" border="0" style="border-collapse:collapse; mso-table-lspace:0pt; mso-table-rspace:0pt;">
+                <tr>
+                  <td style="border-radius:5px; background-color:#1a6b54;">
+                    <!--[if mso]>
+                    <v:roundrect xmlns:v="urn:schemas-microsoft-com:vml" xmlns:w="urn:schemas-microsoft-com:office:word" href="https://www.northstardigital.com/contact" style="height:46px;v-text-anchor:middle;width:250px;" arcsize="11%" strokecolor="#1a6b54" fillcolor="#1a6b54">
+                      <w:anchorlock/>
+                      <center style="color:#ffffff;font-family:Arial,Helvetica,sans-serif;font-size:15px;font-weight:bold;">Book a Free Consultation</center>
+                    </v:roundrect>
+                    <![endif]-->
+                    <!--[if !mso]><!-->
+                    <a class="cta-link" href="https://www.northstardigital.com/contact" target="_blank" style="display:inline-block; padding:13px 32px; font-family:Arial, Helvetica, sans-serif; font-size:15px; font-weight:bold; color:#ffffff; text-decoration:none; border-radius:5px; background-color:#1a6b54; line-height:20px; mso-line-height-rule:exactly;">Book a Free Consultation</a>
+                    <!--<![endif]-->
+                  </td>
+                </tr>
+              </table>
+            </td>
+          </tr>
+
+          <!-- Divider -->
+          <tr>
+            <td class="mobile-padding" style="padding:0 40px;">
+              <table role="presentation" cellpadding="0" cellspacing="0" border="0" width="100%" style="border-collapse:collapse; mso-table-lspace:0pt; mso-table-rspace:0pt;">
+                <tr><td style="border-top:1px solid #e0e0e0; font-size:1px; line-height:1px; height:1px; mso-line-height-rule:exactly;">&nbsp;</td></tr>
+              </table>
+            </td>
+          </tr>
+
+          <!-- Footer -->
+          <tr>
+            <td class="mobile-padding" style="padding:24px 40px 28px 40px;">
+              <table role="presentation" cellpadding="0" cellspacing="0" border="0" width="100%" style="border-collapse:collapse; mso-table-lspace:0pt; mso-table-rspace:0pt;">
+                <tr>
+                  <td style="font-family:Arial, Helvetica, sans-serif; font-size:12px; color:#888888; line-height:18px; mso-line-height-rule:exactly;">
+                    Northstar Digital Solutions<br />
+                    1234 Wilshire Blvd, Los Angeles, CA 90017<br />
+                    <a href="tel:+13105550187" style="color:#888888; text-decoration:none;">+1 (310) 555-0187</a>&nbsp;&nbsp;|&nbsp;&nbsp;<a href="https://www.northstardigital.com" target="_blank" style="color:#1a6b54; text-decoration:none;">northstardigital.com</a>
+                  </td>
+                </tr>
+                <tr>
+                  <td style="padding-top:12px; font-family:Arial, Helvetica, sans-serif; font-size:11px; color:#aaaaaa; line-height:16px; mso-line-height-rule:exactly;">
+                    You received this email because you are a valued contact of Northstar Digital Solutions.
+                    <a href="https://www.northstardigital.com/unsubscribe" style="color:#aaaaaa; text-decoration:underline;">Unsubscribe</a>
+                  </td>
+                </tr>
+              </table>
+            </td>
+          </tr>
+
+        </table>
+
+        <!--[if mso]>
+        </td></tr></table>
+        <![endif]-->
+
+      </td>
+    </tr>
+  </table>
+
+</body>
+</html>

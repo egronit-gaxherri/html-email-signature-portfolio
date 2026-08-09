@@ -1,0 +1,102 @@
+<!--
+  Email Signature — Browser Preview harness.
+  Testing aid only; never sent. Loads ../dist/signature.html in an
+  iframe so what you see here is the exact file that ships.
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Browser Preview — Email Signature | Northstar Digital Solutions</title>
+  <meta name="description" content="Browser preview harness for the Northstar Digital Solutions HTML email signature. Not a substitute for email client testing." />
+  <meta name="robots" content="noindex" />
+  <link rel="stylesheet" href="preview.css" />
+</head>
+<body>
+
+  <div class="shell">
+
+    <!-- Honest labelling comes first, before any rendering -->
+    <div class="banner" role="note">
+      <div class="banner__icon" aria-hidden="true">⚠</div>
+      <div>
+        <p class="banner__title">Browser Preview — Not an Outlook Rendering Test</p>
+        <p class="banner__body">
+          This page renders the signature in your web browser, which uses a modern
+          standards-compliant engine. Outlook Classic renders email through Microsoft Word,
+          Gmail rewrites and strips CSS, and every client differs. A correct result here
+          proves the markup is well-formed — it does <strong>not</strong> prove the signature
+          renders correctly in any email client. Final verification must be performed in each
+          target client. See <code>docs/TESTING.md</code>.
+        </p>
+      </div>
+    </div>
+
+    <header class="page-head">
+      <p class="page-head__eyebrow">Preview Harness</p>
+      <h1 class="page-head__title">Corporate Email Signature</h1>
+      <p class="page-head__desc">
+        Northstar Digital Solutions — Alex Morgan. The signature below is loaded directly from
+        <code>../dist/signature.html</code>, the production build, so this preview and the
+        shipped file can never drift apart.
+      </p>
+    </header>
+
+    <!-- Desktop viewport -->
+    <section class="viewport">
+      <h2 class="viewport__label">Desktop viewport <span>— message context, ~720px</span></h2>
+      <div class="mail">
+        <div class="mail__header">
+          <div class="mail__field">From: <b>Alex Morgan &lt;alex.morgan@northstardigital.com&gt;</b></div>
+          <div class="mail__field">To: <b>sarah.chen@example.com</b></div>
+          <div class="mail__field">Subject: <b>Follow-up: Digital Strategy Consultation</b></div>
+        </div>
+        <div class="mail__body">
+          <div class="mail__message">
+            <p>Hi Sarah,</p>
+            <p>Thank you for taking the time to meet with us today. I wanted to follow up on the key points we discussed regarding your digital transformation roadmap.</p>
+            <p>I've attached the preliminary assessment for your review. Do reach out if you'd like to schedule a deeper technical workshop.</p>
+            <p>Best regards,</p>
+          </div>
+          <div class="mail__separator"></div>
+          <iframe class="sig-frame" src="../dist/signature.html" title="Email signature, desktop rendering" loading="lazy"></iframe>
+        </div>
+      </div>
+    </section>
+
+    <!-- Mobile viewport -->
+    <section class="viewport">
+      <h2 class="viewport__label">Mobile viewport <span>— 375px, iPhone Mail width</span></h2>
+      <div class="phone">
+        <div class="phone__status">iPhone Mail — 9:41</div>
+        <div class="phone__body">
+          <div class="phone__message">
+            <p>Hi Sarah,</p>
+            <p>Thank you for meeting with us. I've attached the preliminary assessment for your review.</p>
+            <p>Best regards,</p>
+          </div>
+          <div class="mail__separator"></div>
+          <iframe class="sig-frame sig-frame--mobile" src="../dist/signature.html" title="Email signature, mobile rendering" loading="lazy"></iframe>
+        </div>
+      </div>
+    </section>
+
+    <!-- What this preview does and does not show -->
+    <section class="notes">
+      <h2 class="notes__title">What this preview does and does not show</h2>
+      <ul>
+        <li><strong>Shown:</strong> markup validity, spacing, typography, colour, image loading, and how the layout reflows at 375px.</li>
+        <li><strong>Shown:</strong> link targets — <code>tel:</code>, <code>mailto:</code>, <code>https:</code>, and the Google Maps address link are all live and clickable here.</li>
+        <li><strong>Not shown:</strong> Outlook Classic's Word engine, which ignores <code>border-radius</code>, <code>max-width</code>, and much else. Rounded corners will be square there — expected, not a defect.</li>
+        <li><strong>Not shown:</strong> Gmail's CSS stripping and class rewriting, Yahoo's table spacing quirks, or client-specific dark-mode colour inversion.</li>
+        <li><strong>Not shown:</strong> behaviour when images are blocked. To simulate, disable images in your browser and confirm the alt text reads sensibly and the layout holds.</li>
+        <li><strong>Image paths:</strong> the production file uses relative paths so this preview works offline. They must be swapped for absolute HTTPS URLs before deployment — see <code>docs/DEPLOYMENT.md</code>.</li>
+        <li><strong>Local server:</strong> if the frames above are empty, you opened this over <code>file://</code>. Some browsers block local iframes. Serve the project over HTTP instead — see the README.</li>
+      </ul>
+    </section>
+
+  </div>
+
+</body>
+</html>

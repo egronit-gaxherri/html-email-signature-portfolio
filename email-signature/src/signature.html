@@ -1,0 +1,160 @@
+<!--
+  ============================================================
+  HTML Email Signature — SOURCE / DEVELOPMENT VERSION
+  Northstar Digital Solutions
+  Developer: Niko (Egronit Gaxherri)
+  ============================================================
+
+  DO NOT SEND THIS FILE.
+
+  This is the readable, maintainable authoring version:
+  structure lives here, styling lives in signature.css.
+  Email clients strip <link> stylesheets, so this file will
+  render unstyled inside an inbox.
+
+  The file that actually ships is:
+
+      ../dist/signature.html
+
+  ...which is this same table structure with every declaration
+  from signature.css hand-inlined onto the elements, plus the
+  MSO conditional comments the source version omits for clarity.
+
+  Keep the two in sync. See docs/DEPLOYMENT.md.
+  ============================================================
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Email Signature (source) — Alex Morgan, Northstar Digital Solutions</title>
+  <link rel="stylesheet" href="signature.css" />
+</head>
+<body>
+
+  <!-- Signature shell -->
+  <table class="sig" cellpadding="0" cellspacing="0" border="0" role="presentation">
+    <tr>
+      <td class="sig__cell">
+
+        <table cellpadding="0" cellspacing="0" border="0" role="presentation">
+
+          <!-- Brand rule -->
+          <tr>
+            <td colspan="2" class="sig__rule-brand-wrap">
+              <table cellpadding="0" cellspacing="0" border="0" width="100%" role="presentation">
+                <tr>
+                  <td class="sig__rule-brand">&nbsp;</td>
+                </tr>
+              </table>
+            </td>
+          </tr>
+
+          <!-- Logo + identity -->
+          <tr>
+            <td class="sig__logo-cell">
+              <!-- 2x asset (100x100) displayed at 50x50 for retina screens -->
+              <img
+                class="sig__logo"
+                src="assets/logo/northstar-logo-100.png"
+                alt="Northstar Digital Solutions"
+                width="50"
+                height="50" />
+            </td>
+
+            <td class="sig__identity-cell">
+
+              <table cellpadding="0" cellspacing="0" border="0" role="presentation">
+                <tr><td class="sig__name">Alex Morgan</td></tr>
+              </table>
+
+              <table cellpadding="0" cellspacing="0" border="0" role="presentation">
+                <tr><td class="sig__title">Senior Technology Consultant</td></tr>
+              </table>
+
+              <table cellpadding="0" cellspacing="0" border="0" role="presentation">
+                <tr><td class="sig__company">Northstar Digital Solutions</td></tr>
+              </table>
+
+              <!-- Hairline -->
+              <table cellpadding="0" cellspacing="0" border="0" width="100%" role="presentation">
+                <tr><td class="sig__rule-hair">&nbsp;</td></tr>
+              </table>
+
+              <!-- Contact details: all live text, all clickable -->
+              <table cellpadding="0" cellspacing="0" border="0" role="presentation">
+
+                <tr>
+                  <td class="sig__contact-row sig__contact-row--nowrap">
+                    <span class="sig__label">P:</span>&nbsp;&nbsp;<a class="sig__link" href="tel:+13105550187">+1 (310) 555-0187</a>
+                  </td>
+                </tr>
+
+                <tr>
+                  <td class="sig__contact-row sig__contact-row--nowrap">
+                    <span class="sig__label">E:</span>&nbsp;&nbsp;<a class="sig__link sig__link--brand" href="mailto:alex.morgan@northstardigital.com">alex.morgan@northstardigital.com</a>
+                  </td>
+                </tr>
+
+                <tr>
+                  <td class="sig__contact-row sig__contact-row--nowrap">
+                    <span class="sig__label">W:</span>&nbsp;&nbsp;<a class="sig__link sig__link--brand" href="https://www.northstardigital.com" target="_blank" rel="noopener">www.northstardigital.com</a>
+                  </td>
+                </tr>
+
+                <!-- Address wraps rather than nowrapping: a long street
+                     address with white-space:nowrap overflows on mobile. -->
+                <tr>
+                  <td class="sig__contact-row">
+                    <span class="sig__label">A:</span>&nbsp;&nbsp;<a class="sig__link" href="https://www.google.com/maps/search/?api=1&amp;query=1234+Wilshire+Blvd+Los+Angeles+CA+90017" target="_blank" rel="noopener">1234 Wilshire Blvd, Los Angeles, CA 90017</a>
+                  </td>
+                </tr>
+
+              </table>
+
+              <!-- Social icons: 48x48 assets displayed at 24x24 -->
+              <table class="sig__social" cellpadding="0" cellspacing="0" border="0" role="presentation">
+                <tr>
+                  <td class="sig__social-cell">
+                    <a href="https://www.linkedin.com/company/northstardigital" target="_blank" rel="noopener">
+                      <img class="sig__social-icon" src="assets/icons/linkedin-48.png" alt="LinkedIn" width="24" height="24" />
+                    </a>
+                  </td>
+                  <td class="sig__social-cell">
+                    <a href="https://x.com/northstardigital" target="_blank" rel="noopener">
+                      <img class="sig__social-icon" src="assets/icons/x-48.png" alt="X" width="24" height="24" />
+                    </a>
+                  </td>
+                  <td class="sig__social-cell sig__social-cell--last">
+                    <a href="https://www.facebook.com/northstardigital" target="_blank" rel="noopener">
+                      <img class="sig__social-icon" src="assets/icons/facebook-48.png" alt="Facebook" width="24" height="24" />
+                    </a>
+                  </td>
+                </tr>
+              </table>
+
+            </td>
+          </tr>
+
+          <!-- Confidentiality notice -->
+          <tr>
+            <td colspan="2" class="sig__disclaimer-wrap">
+              <table cellpadding="0" cellspacing="0" border="0" width="100%" role="presentation">
+                <tr>
+                  <td class="sig__disclaimer">
+                    This email and any attachments are confidential. If you have received this message in error, please notify the sender and delete it immediately.
+                  </td>
+                </tr>
+              </table>
+            </td>
+          </tr>
+
+        </table>
+
+      </td>
+    </tr>
+  </table>
+
+</body>
+</html>

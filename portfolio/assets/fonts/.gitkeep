@@ -1,0 +1,16 @@
+Self-hosted web fonts.
+
+Currently empty: the site loads DM Sans and JetBrains Mono from Google Fonts,
+behind a full system-font fallback stack, so it degrades cleanly when the CDN
+is blocked or offline.
+
+To self-host instead (avoids the third-party request, improves privacy, and
+removes a point of failure):
+
+  1. Download the woff2 files into this directory
+  2. Replace the <link> tags in portfolio/index.html with @font-face rules
+     in portfolio/css/main.css
+  3. Use font-display: swap so text renders before the font arrives
+
+Note: web fonts are used on the WEBSITE only. The email deliverables use no
+web fonts at all — email clients strip @font-face.

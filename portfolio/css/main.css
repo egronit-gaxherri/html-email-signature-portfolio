@@ -1,0 +1,297 @@
+/* =============================================================
+   main.css — Global foundation
+   HTML Email Signature Developer · Portfolio
+   -------------------------------------------------------------
+   Scope of this file, and only this file:
+     1. Design tokens
+     2. Reset
+     3. Base elements & typography
+     4. Layout primitives
+     5. Section furniture
+     6. Accessibility utilities
+     7. Motion preferences
+
+   Components live in components.css.
+   Breakpoints live in responsive.css.
+   Load order matters: main -> components -> responsive.
+   ============================================================= */
+
+/* -------------------------------------------------------------
+   1. DESIGN TOKENS
+   ------------------------------------------------------------- */
+:root {
+  /* Surfaces — near-black, low chroma, so the accent carries all
+     the colour weight */
+  --bg:          #0c0c0e;
+  --bg-raised:   #131316;
+  --bg-card:     #17171b;
+  --bg-inset:    #101013;
+
+  /* Hairlines */
+  --border:      rgba(255, 255, 255, 0.07);
+  --border-hi:   rgba(255, 255, 255, 0.14);
+
+  /* Text */
+  --text:        #e8e8ec;
+  --text-muted:  #8d8d99;
+  --text-dim:    #5f5f6a;
+
+  /* Accent */
+  --accent:      #2dd4a0;
+  --accent-hi:   #5eeabe;
+  --accent-dim:  rgba(45, 212, 160, 0.12);
+  --accent-line: rgba(45, 212, 160, 0.28);
+
+  /* Brand green used inside the email deliverables — referenced in
+     the case study so the two colour systems stay distinguishable */
+  --email-brand: #1a6b54;
+
+  /* Type */
+  --font-body: "DM Sans", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  --font-mono: "JetBrains Mono", ui-monospace, SFMono-Regular, "SF Mono", Menlo, Consolas, monospace;
+
+  /* Scale */
+  --step--1: 13px;
+  --step-0:  16px;
+  --step-1:  clamp(19px, 1.4vw, 21px);
+  --step-2:  clamp(24px, 3.2vw, 34px);
+  --step-3:  clamp(34px, 5.4vw, 54px);
+
+  /* Space */
+  --gutter:     24px;
+  --max-w:      1080px;
+  --section-y:  96px;
+
+  /* Shape */
+  --radius:     10px;
+  --radius-sm:  6px;
+  --radius-pill: 100px;
+
+  /* Motion */
+  --ease:       cubic-bezier(0.32, 0.72, 0, 1);
+  --dur:        0.22s;
+}
+
+/* -------------------------------------------------------------
+   2. RESET
+   ------------------------------------------------------------- */
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+  /* Keeps anchored sections clear of the fixed navbar */
+  scroll-padding-top: 84px;
+  -webkit-text-size-adjust: 100%;
+  text-size-adjust: 100%;
+}
+
+body {
+  font-family: var(--font-body);
+  font-size: var(--step-0);
+  line-height: 1.6;
+  color: var(--text);
+  background: var(--bg);
+  overflow-x: hidden;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+img,
+svg {
+  display: block;
+  max-width: 100%;
+}
+
+ul,
+ol {
+  list-style: none;
+}
+
+button {
+  font: inherit;
+  color: inherit;
+  background: none;
+  border: 0;
+  cursor: pointer;
+}
+
+table {
+  border-collapse: collapse;
+  width: 100%;
+}
+
+/* -------------------------------------------------------------
+   3. BASE TYPOGRAPHY
+   ------------------------------------------------------------- */
+h1, h2, h3, h4 {
+  font-weight: 700;
+  line-height: 1.15;
+  letter-spacing: -0.02em;
+  text-wrap: balance;
+}
+
+h1 { font-size: var(--step-3); letter-spacing: -0.03em; }
+h2 { font-size: var(--step-2); }
+h3 { font-size: var(--step-1); letter-spacing: -0.01em; }
+h4 { font-size: var(--step-0); letter-spacing: -0.005em; }
+
+p { text-wrap: pretty; }
+
+a {
+  color: var(--accent);
+  text-decoration: none;
+  transition: color var(--dur) var(--ease);
+}
+
+a:hover { color: var(--accent-hi); }
+
+strong { font-weight: 600; color: var(--text); }
+
+code {
+  font-family: var(--font-mono);
+  font-size: 0.875em;
+  padding: 2px 6px;
+  background: var(--bg-inset);
+  border: 1px solid var(--border);
+  border-radius: 4px;
+  color: var(--text-muted);
+}
+
+::selection {
+  background: var(--accent);
+  color: var(--bg);
+}
+
+/* Visible focus for every keyboard user, on every interactive element */
+:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 3px;
+  border-radius: 2px;
+}
+
+/* -------------------------------------------------------------
+   4. LAYOUT PRIMITIVES
+   ------------------------------------------------------------- */
+.container {
+  width: 100%;
+  max-width: var(--max-w);
+  margin-inline: auto;
+  padding-inline: var(--gutter);
+}
+
+.section {
+  padding-block: var(--section-y);
+}
+
+/* Alternating band, used to separate major sections without
+   resorting to heavy dividers */
+.section--raised {
+  background: var(--bg-raised);
+  border-top: 1px solid var(--border);
+  border-bottom: 1px solid var(--border);
+}
+
+/* -------------------------------------------------------------
+   5. SECTION FURNITURE
+   ------------------------------------------------------------- */
+.section-label {
+  font-family: var(--font-mono);
+  font-size: 11px;
+  font-weight: 400;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: var(--accent);
+  margin-bottom: 14px;
+}
+
+.section-title {
+  margin-bottom: 16px;
+}
+
+.section-desc {
+  font-size: var(--step-0);
+  color: var(--text-muted);
+  max-width: 62ch;
+}
+
+.section-body {
+  margin-top: 44px;
+}
+
+/* -------------------------------------------------------------
+   6. ACCESSIBILITY UTILITIES
+   ------------------------------------------------------------- */
+.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  padding: 0;
+  overflow: hidden;
+  clip-path: inset(50%);
+  white-space: nowrap;
+  border: 0;
+}
+
+.skip-link {
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translate(-50%, -120%);
+  z-index: 200;
+  padding: 10px 20px;
+  background: var(--accent);
+  color: var(--bg);
+  font-size: var(--step--1);
+  font-weight: 600;
+  border-radius: 0 0 var(--radius-sm) var(--radius-sm);
+  transition: transform var(--dur) var(--ease);
+}
+
+.skip-link:focus-visible {
+  transform: translate(-50%, 0);
+  color: var(--bg);
+}
+
+/* -------------------------------------------------------------
+   7. MOTION
+      Reveal animation is opt-in: elements are only hidden once
+      main.js confirms IntersectionObserver support AND the user
+      has not asked for reduced motion. Without that class the
+      content is simply visible — no JS, no blank page.
+   ------------------------------------------------------------- */
+.js-reveal [data-reveal] {
+  opacity: 0;
+  transform: translateY(14px);
+  transition: opacity 0.55s var(--ease), transform 0.55s var(--ease);
+  will-change: opacity, transform;
+}
+
+.js-reveal [data-reveal].is-visible {
+  opacity: 1;
+  transform: none;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+
+  .js-reveal [data-reveal] {
+    opacity: 1;
+    transform: none;
+  }
+}

@@ -1,0 +1,222 @@
+/* =============================================================
+   Email Signature — DEVELOPMENT STYLESHEET
+   Northstar Digital Solutions
+   -------------------------------------------------------------
+   THIS FILE IS NOT SHIPPED TO EMAIL CLIENTS.
+
+   Email clients strip <link> and are unreliable with <style>.
+   This stylesheet exists so the signature can be authored and
+   reviewed as readable, maintainable code. Every declaration
+   below has a hand-inlined counterpart in:
+
+       ../dist/signature.html
+
+   When you change a value here, change it in dist/ too.
+   The mapping is 1:1 and deliberate — see docs/DEPLOYMENT.md.
+
+   Values are kept email-safe on purpose: no flexbox, no grid,
+   no custom properties in the shipped output, no web fonts,
+   px units only, and no shorthand that Outlook mis-parses.
+   ============================================================= */
+
+/* -------------------------------------------------------------
+   1. Design tokens (development convenience only — resolved to
+      literal values when inlined into dist/)
+   ------------------------------------------------------------- */
+:root {
+  --brand:        #1a6b54;  /* Northstar green — links, accents  */
+  --ink:          #1a1a1a;  /* Primary text                      */
+  --ink-soft:     #555555;  /* Secondary text                    */
+  --ink-label:    #8a8a8a;  /* P: / E: / W: / A: labels          */
+  --ink-fine:     #999999;  /* Legal disclaimer                  */
+  --rule:         #d9d9d9;  /* Hairline divider                  */
+  --font-stack:   Arial, Helvetica, sans-serif;
+}
+
+/* -------------------------------------------------------------
+   2. Email resets
+      Mirrors the inline + MSO resets present in dist/
+   ------------------------------------------------------------- */
+body {
+  margin: 0;
+  padding: 0;
+  -webkit-text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%;
+}
+
+table {
+  border-collapse: collapse;
+  mso-table-lspace: 0pt;
+  mso-table-rspace: 0pt;
+}
+
+img {
+  border: 0;
+  outline: none;
+  display: block;
+  text-decoration: none;
+  -ms-interpolation-mode: bicubic; /* smooth downscaling in Outlook/IE */
+}
+
+a {
+  text-decoration: none;
+}
+
+/* -------------------------------------------------------------
+   3. Signature shell
+   ------------------------------------------------------------- */
+.sig {
+  max-width: 600px;
+  font-family: var(--font-stack);
+}
+
+.sig__cell {
+  padding: 0;
+  vertical-align: top;
+}
+
+/* Top brand rule — 3px solid bar above the signature block */
+.sig__rule-brand {
+  border-top: 3px solid var(--brand);
+  font-size: 1px;
+  line-height: 1px;
+  height: 1px;
+}
+
+.sig__rule-brand-wrap {
+  padding: 0 0 16px 0;
+}
+
+/* Hairline rule between identity and contact details */
+.sig__rule-hair {
+  border-top: 1px solid var(--rule);
+  font-size: 1px;
+  line-height: 1px;
+  height: 1px;
+  padding: 0 0 12px 0;
+}
+
+/* -------------------------------------------------------------
+   4. Logo column
+      Fixed pixel width so the content column can stay fluid.
+      Image is served at 2x (100x100) and displayed at 50x50.
+   ------------------------------------------------------------- */
+.sig__logo-cell {
+  vertical-align: top;
+  padding: 0 20px 0 0;
+  width: 60px;
+}
+
+.sig__logo {
+  display: block;
+  border: 0;
+  outline: none;
+  border-radius: 6px; /* ignored by Outlook Classic — degrades to square */
+}
+
+/* -------------------------------------------------------------
+   5. Identity block
+   ------------------------------------------------------------- */
+.sig__identity-cell {
+  vertical-align: top;
+  padding: 0;
+}
+
+.sig__name {
+  font-family: var(--font-stack);
+  font-size: 17px;
+  font-weight: bold;
+  color: var(--ink);
+  line-height: 22px;
+  padding: 0 0 2px 0;
+}
+
+.sig__title {
+  font-family: var(--font-stack);
+  font-size: 13px;
+  color: var(--ink-soft);
+  line-height: 18px;
+  letter-spacing: 0.3px;
+  padding: 0 0 2px 0;
+}
+
+.sig__company {
+  font-family: var(--font-stack);
+  font-size: 13px;
+  font-weight: bold;
+  color: var(--brand);
+  line-height: 18px;
+  letter-spacing: 0.3px;
+  padding: 0 0 12px 0;
+}
+
+/* -------------------------------------------------------------
+   6. Contact rows
+   ------------------------------------------------------------- */
+.sig__contact-row {
+  font-family: var(--font-stack);
+  font-size: 12px;
+  color: var(--ink-soft);
+  line-height: 20px;
+  padding: 0 0 3px 0;
+}
+
+/* Applied only to phone/email/web — the street address is allowed
+   to wrap, since forcing nowrap causes horizontal overflow on
+   narrow mobile viewports. */
+.sig__contact-row--nowrap {
+  white-space: nowrap;
+}
+
+.sig__label {
+  color: var(--ink-label);
+  font-size: 12px;
+}
+
+.sig__link {
+  font-family: var(--font-stack);
+  font-size: 12px;
+  color: var(--ink);
+  text-decoration: none;
+}
+
+.sig__link--brand {
+  color: var(--brand);
+}
+
+/* -------------------------------------------------------------
+   7. Social icons
+      48x48 source displayed at 24x24 for retina clarity.
+   ------------------------------------------------------------- */
+.sig__social {
+  margin-top: 12px;
+}
+
+.sig__social-cell {
+  padding: 0 8px 0 0;
+}
+
+.sig__social-cell--last {
+  padding: 0;
+}
+
+.sig__social-icon {
+  display: block;
+  border: 0;
+  outline: none;
+  border-radius: 4px;
+}
+
+/* -------------------------------------------------------------
+   8. Confidentiality notice
+   ------------------------------------------------------------- */
+.sig__disclaimer-wrap {
+  padding: 16px 0 0 0;
+}
+
+.sig__disclaimer {
+  font-family: var(--font-stack);
+  font-size: 10px;
+  color: var(--ink-fine);
+  line-height: 14px;
+}

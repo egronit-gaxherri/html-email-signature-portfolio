@@ -1,0 +1,27 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="600" viewBox="0 0 1200 600" role="img">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#12503e"/>
+      <stop offset="55%" stop-color="#1a6b54"/>
+      <stop offset="100%" stop-color="#0e3d2f"/>
+    </linearGradient>
+  </defs>
+  <rect width="1200" height="600" fill="url(#bg)"/>
+  <g stroke="#ffffff" stroke-opacity="0.07" stroke-width="2">
+    <path d="M0 150 H1200 M0 300 H1200 M0 450 H1200"/>
+    <path d="M200 0 V600 M400 0 V600 M600 0 V600 M800 0 V600 M1000 0 V600"/>
+  </g>
+  <g stroke="#5eeabe" stroke-opacity="0.55" stroke-width="3" fill="none" stroke-linecap="round">
+    <path d="M120 430 L320 350 L520 380 L720 250 L920 290 L1080 170"/>
+  </g>
+  <g fill="#ffffff">
+    <circle cx="320" cy="350" r="7"/><circle cx="520" cy="380" r="7"/>
+    <circle cx="720" cy="250" r="7"/><circle cx="920" cy="290" r="7"/>
+    <circle cx="1080" cy="170" r="9"/>
+  </g>
+  <g opacity="0.16" fill="#ffffff">
+    <path d="M1000 420 L1014 468 L1062 482 L1014 496 L1000 544 L986 496 L938 482 L986 468 Z"/>
+  </g>
+  <text x="120" y="150" font-family="Helvetica, Arial, sans-serif" font-size="34" font-weight="700" fill="#ffffff" letter-spacing="1">DIGITAL TRANSFORMATION</text>
+  <text x="122" y="196" font-family="Helvetica, Arial, sans-serif" font-size="20" font-weight="400" fill="#a9e8d1" letter-spacing="4">STRATEGY · CLOUD · DATA · AUTOMATION</text>
+</svg>

@@ -1,0 +1,97 @@
+# =============================================================
+# HTML Email Signature & Advertisement Portfolio
+# -------------------------------------------------------------
+# This project has no build step and no package manager. Almost
+# everything here is source and belongs in version control —
+# including the generated PNG assets, which the email files
+# depend on and which must stay reproducible from their SVG
+# masters.
+# =============================================================
+
+# --- macOS ---------------------------------------------------
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+.fseventsd
+.AppleDouble
+.LSOverride
+Icon
+
+# --- Windows -------------------------------------------------
+Thumbs.db
+Thumbs.db:encryptable
+ehthumbs.db
+Desktop.ini
+$RECYCLE.BIN/
+*.lnk
+
+# --- Linux ---------------------------------------------------
+.directory
+.Trash-*
+.nfs*
+
+# --- Editors -------------------------------------------------
+# .vscode/settings.json is kept: it pins the Live Server port so
+# the preview iframes resolve consistently across machines.
+.vscode/*
+!.vscode/settings.json
+!.vscode/extensions.json
+.idea/
+*.sublime-workspace
+*.sublime-project
+.project
+.classpath
+.settings/
+
+# --- Editor temporary files ----------------------------------
+*.swp
+*.swo
+*.swn
+*~
+*.bak
+*.orig
+*.rej
+.#*
+\#*#
+
+# --- Node ----------------------------------------------------
+# Not used today. Listed so that adding an inliner later
+# (Juice, Premailer, MJML) does not accidentally commit a
+# dependency tree.
+node_modules/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+.npm/
+.yarn/
+package-lock.json.bak
+
+# --- Build / temp --------------------------------------------
+tmp/
+temp/
+.cache/
+*.tmp
+*.log
+
+# --- Environment ---------------------------------------------
+.env
+.env.*
+!.env.example
+
+# --- Local server artefacts ----------------------------------
+.python_version
+__pycache__/
+*.pyc
+
+# =============================================================
+# Deliberately NOT ignored:
+#   email-*/src/assets/**/*.png   generated, but required by the
+#                                 email files and by the previews
+#   email-*/src/assets/**/*.svg   the masters those PNGs come from
+#   screenshots/                  rendering evidence lives here
+#   */dist/                       hand-authored production output,
+#                                 not a build artefact
+# =============================================================

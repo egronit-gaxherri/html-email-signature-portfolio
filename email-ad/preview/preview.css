@@ -1,0 +1,221 @@
+/* =============================================================
+   Email Advertisement — Browser Preview stylesheet
+   -------------------------------------------------------------
+   Scoped to the preview harness only. The advertisement itself is
+   loaded in an <iframe> from ../dist/email-ad.html, so it renders
+   with its own inline styles and its own media queries, exactly as
+   it will when sent.
+
+   The narrow iframe is genuinely 375px wide, so the email's
+   @media (max-width: 620px) block really does fire — this is a
+   real responsive check, not a simulated one.
+   ============================================================= */
+
+:root {
+  --brand:      #1a6b54;
+  --page:       #eef0ef;
+  --surface:    #ffffff;
+  --ink:        #14201c;
+  --ink-soft:   #5d6b66;
+  --ink-faint:  #93a09b;
+  --rule:       #dfe4e2;
+  --warn-bg:    #fff8ed;
+  --warn-rule:  #f0d9a8;
+  --warn-ink:   #6b5330;
+  --shell:      860px;
+}
+
+*, *::before, *::after { box-sizing: border-box; }
+
+body {
+  margin: 0;
+  padding: 40px 20px 64px;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  background: var(--page);
+  color: var(--ink);
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+}
+
+.shell {
+  max-width: var(--shell);
+  margin: 0 auto;
+}
+
+/* -------------------------------------------------------------
+   Disclaimer banner
+   ------------------------------------------------------------- */
+.banner {
+  display: flex;
+  gap: 14px;
+  align-items: flex-start;
+  padding: 16px 20px;
+  margin-bottom: 32px;
+  background: var(--warn-bg);
+  border: 1px solid var(--warn-rule);
+  border-left: 4px solid #d9a03c;
+  border-radius: 6px;
+}
+
+.banner__icon {
+  flex: 0 0 auto;
+  font-size: 18px;
+  line-height: 1.4;
+}
+
+.banner__title {
+  margin: 0 0 4px;
+  font-size: 14px;
+  font-weight: 700;
+  color: var(--warn-ink);
+}
+
+.banner__body {
+  margin: 0;
+  font-size: 13px;
+  color: var(--warn-ink);
+  line-height: 1.6;
+}
+
+/* -------------------------------------------------------------
+   Page header
+   ------------------------------------------------------------- */
+.page-head { margin-bottom: 36px; }
+
+.page-head__eyebrow {
+  margin: 0 0 8px;
+  font-family: ui-monospace, SFMono-Regular, "SF Mono", Menlo, monospace;
+  font-size: 11px;
+  font-weight: 500;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: var(--brand);
+}
+
+.page-head__title {
+  margin: 0 0 10px;
+  font-size: 24px;
+  font-weight: 700;
+  letter-spacing: -0.4px;
+}
+
+.page-head__desc {
+  margin: 0;
+  font-size: 14px;
+  color: var(--ink-soft);
+  max-width: 64ch;
+}
+
+/* -------------------------------------------------------------
+   Viewport sections
+   ------------------------------------------------------------- */
+.viewport { margin-bottom: 40px; }
+
+.viewport__label {
+  display: flex;
+  align-items: baseline;
+  gap: 10px;
+  margin-bottom: 12px;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 1.4px;
+  text-transform: uppercase;
+  color: var(--ink-faint);
+}
+
+.viewport__label span {
+  font-family: ui-monospace, SFMono-Regular, "SF Mono", Menlo, monospace;
+  font-weight: 500;
+  letter-spacing: 0.4px;
+  text-transform: none;
+  color: var(--ink-soft);
+}
+
+/* Frame that holds the email iframe */
+.stage {
+  background: #f4f4f4;
+  border: 1px solid var(--rule);
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+.stage--narrow {
+  width: 375px;
+  max-width: 100%;
+  border-radius: 22px;
+  box-shadow: 0 6px 28px rgba(20, 32, 28, 0.08);
+}
+
+.stage__chrome {
+  padding: 14px 18px;
+  background: #f7f9f8;
+  border-bottom: 1px solid var(--rule);
+  font-size: 12.5px;
+  color: var(--ink-faint);
+}
+
+.stage__chrome b { font-weight: 500; color: var(--ink); }
+
+.stage__chrome--center { text-align: center; font-size: 11px; }
+
+/* The advertisement itself, loaded from dist/ */
+.ad-frame {
+  display: block;
+  width: 100%;
+  border: 0;
+  background: #f4f4f4;
+  /* Fixed heights: the harness is deliberately JavaScript-free,
+     matching the constraint the emails work under. Measured against
+     the current content — 1170px at 600px wide, 1239px at 375px
+     where the copy reflows into more lines — plus headroom. */
+  height: 1190px;
+}
+
+.ad-frame--mobile { height: 1280px; }
+
+/* -------------------------------------------------------------
+   Technical notes
+   ------------------------------------------------------------- */
+.notes {
+  padding: 22px 24px;
+  background: var(--surface);
+  border: 1px solid var(--rule);
+  border-radius: 8px;
+}
+
+.notes__title {
+  margin: 0 0 12px;
+  font-size: 13px;
+  font-weight: 700;
+  color: var(--ink);
+}
+
+.notes ul { margin: 0; padding-left: 18px; }
+
+.notes li {
+  font-size: 13px;
+  color: var(--ink-soft);
+  line-height: 1.65;
+  margin-bottom: 6px;
+}
+
+.notes li:last-child { margin-bottom: 0; }
+
+.notes code {
+  font-family: ui-monospace, SFMono-Regular, "SF Mono", Menlo, monospace;
+  font-size: 12px;
+  padding: 1px 5px;
+  background: #eef2f0;
+  border-radius: 3px;
+  color: var(--ink);
+}
+
+.notes a { color: var(--brand); }
+
+/* -------------------------------------------------------------
+   Narrow screens
+   ------------------------------------------------------------- */
+@media (max-width: 480px) {
+  body { padding: 24px 14px 48px; }
+  .page-head__title { font-size: 20px; }
+}

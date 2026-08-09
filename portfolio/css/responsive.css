@@ -1,0 +1,282 @@
+/* =============================================================
+   responsive.css — Breakpoint layer
+   HTML Email Signature Developer · Portfolio
+   -------------------------------------------------------------
+   Every width-dependent override in the site lives here, so
+   there is exactly one file to open when something breaks at a
+   given size. Loaded last, after main.css and components.css.
+
+   Breakpoints (max-width, desktop-first to match the component
+   layer):
+       1024px  laptop / small desktop
+        860px  tablet — mobile navigation takes over here
+        640px  phone
+        420px  narrow phone
+   ============================================================= */
+
+/* -------------------------------------------------------------
+   1024px — LAPTOP
+   ------------------------------------------------------------- */
+@media (max-width: 1024px) {
+  :root {
+    --section-y: 84px;
+  }
+
+  .about {
+    gap: 44px;
+  }
+
+  .case {
+    grid-template-columns: 1fr;
+  }
+
+  .hero__stats {
+    gap: 40px;
+  }
+}
+
+/* -------------------------------------------------------------
+   860px — TABLET
+   Mobile navigation engages at this width: the inline link list
+   becomes a collapsible panel driven by main.js.
+   ------------------------------------------------------------- */
+@media (max-width: 860px) {
+  :root {
+    --section-y: 72px;
+  }
+
+  /* --- Navigation --- */
+  .nav__toggle {
+    display: grid;
+    position: relative;
+  }
+
+  .nav__menu {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+
+    /* Fully opaque, and deliberately without its own backdrop-filter.
+       The panel sits inside .nav, which is already a backdrop root;
+       nesting a second filtered layer that overflows its parent makes
+       Chromium leak the page content through the panel. A full-width
+       mobile menu should be solid regardless. */
+    background: var(--bg);
+    border-bottom: 1px solid var(--border);
+    box-shadow: 0 18px 40px rgba(0, 0, 0, 0.45);
+
+    /* Collapsed by default. Hidden from the accessibility tree and
+       from keyboard focus, not merely transparent. */
+    visibility: hidden;
+    opacity: 0;
+    transform: translateY(-6px);
+    pointer-events: none;
+    transition: opacity var(--dur) var(--ease),
+                transform var(--dur) var(--ease),
+                visibility var(--dur) var(--ease);
+  }
+
+  .nav__menu.is-open {
+    visibility: visible;
+    opacity: 1;
+    transform: none;
+    pointer-events: auto;
+  }
+
+  .nav__list {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 0;
+    padding: 8px var(--gutter) 20px;
+  }
+
+  .nav__link {
+    display: block;
+    padding: 14px 0;
+    font-size: 15px;
+    border-bottom: 1px solid var(--border);
+  }
+
+  .nav__list li:last-child .nav__link {
+    border-bottom: 0;
+  }
+
+  /* The underline indicator does not read well as a full-width
+     row; swap it for a leading accent bar. */
+  .nav__link[aria-current="true"]::after {
+    left: -12px;
+    right: auto;
+    top: 50%;
+    bottom: auto;
+    width: 3px;
+    height: 18px;
+    transform: translateY(-50%);
+    border-radius: 2px;
+  }
+
+  /* --- Layout --- */
+  .hero {
+    padding-block: 136px 84px;
+  }
+
+  .about,
+  .contact {
+    grid-template-columns: 1fr;
+    gap: 36px;
+  }
+
+  .project__stage {
+    min-height: 300px;
+    padding: 30px;
+  }
+
+  .project__info {
+    padding: 26px;
+  }
+
+  /* Problem/solution pairs stack into labelled blocks */
+  .case__entry {
+    grid-template-columns: 1fr;
+  }
+
+  .case__entry--head {
+    display: none;
+  }
+
+  .case__num {
+    padding-bottom: 0;
+  }
+
+  .case__problem {
+    border-right: 0;
+    padding-bottom: 8px;
+    font-weight: 500;
+  }
+
+  .case__solution {
+    padding-top: 0;
+  }
+}
+
+/* -------------------------------------------------------------
+   640px — PHONE
+   ------------------------------------------------------------- */
+@media (max-width: 640px) {
+  :root {
+    --section-y: 60px;
+    --gutter: 20px;
+  }
+
+  .hero {
+    padding-block: 122px 68px;
+  }
+
+  .hero__sub {
+    margin-bottom: 32px;
+  }
+
+  .hero__actions {
+    margin-bottom: 48px;
+  }
+
+  .btn {
+    justify-content: center;
+    flex: 1 1 auto;
+  }
+
+  .hero__stats {
+    gap: 26px;
+    padding-top: 28px;
+  }
+
+  .hero__stat {
+    flex: 1 1 40%;
+  }
+
+  .project__stage {
+    min-height: 0;
+    padding: 22px;
+  }
+
+  .project__info {
+    padding: 22px;
+  }
+
+  .project__features {
+    grid-template-columns: 1fr;
+    gap: 4px;
+  }
+
+  .project__links .btn {
+    flex: 1 1 100%;
+  }
+
+  .skill-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .process {
+    grid-template-columns: 1fr;
+  }
+
+  .contact__card {
+    padding: 22px;
+  }
+
+  .contact__row {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 5px;
+  }
+
+  .contact__value {
+    text-align: left;
+  }
+
+  .footer__inner {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 16px;
+  }
+}
+
+/* -------------------------------------------------------------
+   420px — NARROW PHONE
+   ------------------------------------------------------------- */
+@media (max-width: 420px) {
+  .skill-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .hero__stats {
+    flex-direction: column;
+    gap: 20px;
+  }
+
+  .mock-inbox__body,
+  .mock-ad__content {
+    padding: 14px;
+  }
+
+  .case__block {
+    padding: 20px;
+  }
+}
+
+/* -------------------------------------------------------------
+   Pointer-coarse touch targets
+   Applies to touch devices at any width.
+   ------------------------------------------------------------- */
+@media (hover: none) and (pointer: coarse) {
+  .nav__link {
+    min-height: 44px;
+    display: flex;
+    align-items: center;
+  }
+
+  .footer__links a,
+  .contact__value {
+    padding-block: 4px;
+  }
+}

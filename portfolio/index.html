@@ -1,0 +1,653 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <title>Niko — HTML Email Signature Developer</title>
+  <meta name="description" content="Hand-coded, Outlook-compatible HTML email signatures and campaign emails. Table-based layouts, inline CSS, VML fallbacks, and documented cross-client testing." />
+  <meta name="author" content="Niko (Egronit Gaxherri)" />
+  <meta name="theme-color" content="#0c0c0e" />
+
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="Niko — HTML Email Signature Developer" />
+  <meta property="og:description" content="Hand-coded, Outlook-compatible HTML email signatures and campaign emails." />
+
+  <link rel="icon" href="assets/icons/favicon.svg" type="image/svg+xml" />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:opsz,wght@9..40,300;9..40,400;9..40,500;9..40,600;9..40,700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
+
+  <!-- Load order is significant: tokens/base, then components, then breakpoints -->
+  <link rel="stylesheet" href="css/main.css" />
+  <link rel="stylesheet" href="css/components.css" />
+  <link rel="stylesheet" href="css/responsive.css" />
+
+  <script src="js/main.js" defer></script>
+</head>
+<body>
+
+  <a class="skip-link" href="#main">Skip to content</a>
+
+  <!-- =========================================================
+       NAVIGATION
+       ========================================================= -->
+  <header class="nav">
+    <div class="container nav__inner">
+      <a class="nav__logo" href="#top">niko<span>.</span>email</a>
+
+      <button class="nav__toggle" type="button" data-nav-toggle
+              aria-expanded="false" aria-controls="nav-menu"
+              aria-label="Toggle navigation menu" hidden>
+        <span class="nav__toggle-bars" aria-hidden="true"></span>
+      </button>
+
+      <nav id="nav-menu" class="nav__menu" data-nav-menu aria-label="Primary">
+        <ul class="nav__list">
+          <li><a class="nav__link" href="#about">About</a></li>
+          <li><a class="nav__link" href="#work">Work</a></li>
+          <li><a class="nav__link" href="#skills">Skills</a></li>
+          <li><a class="nav__link" href="#compatibility">Compatibility</a></li>
+          <li><a class="nav__link" href="#process">Process</a></li>
+          <li><a class="nav__link" href="#case-study">Case Study</a></li>
+          <li><a class="nav__link" href="#contact">Contact</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main">
+
+    <!-- =======================================================
+         HERO
+         ======================================================= -->
+    <section class="hero" id="top">
+      <div class="container hero__inner">
+        <p class="hero__eyebrow" data-reveal>Email Development</p>
+
+        <h1 class="hero__title" data-reveal>HTML Email Signature Developer</h1>
+
+        <p class="hero__sub" data-reveal>
+          Professional, responsive, Outlook-compatible email signatures and campaign
+          emails — hand-coded with table layouts and email-safe inline CSS. No builders,
+          no frameworks, no surprises in the inbox.
+        </p>
+
+        <div class="hero__actions" data-reveal>
+          <a class="btn btn--primary" href="#work">
+            View my work
+            <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M8 3v10M4 9l4 4 4-4" /></svg>
+          </a>
+          <a class="btn btn--ghost" href="#contact">Get in touch</a>
+        </div>
+
+        <ul class="hero__stats" data-reveal>
+          <li class="hero__stat">
+            <p class="hero__stat-value">2</p>
+            <p class="hero__stat-label">Production-ready email deliverables</p>
+          </li>
+          <li class="hero__stat">
+            <p class="hero__stat-value">0</p>
+            <p class="hero__stat-label">Lines of JavaScript in the email output</p>
+          </li>
+          <li class="hero__stat">
+            <p class="hero__stat-value">100%</p>
+            <p class="hero__stat-label">Hand-written HTML, no drag-and-drop builders</p>
+          </li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- =======================================================
+         ABOUT
+         ======================================================= -->
+    <section class="section" id="about">
+      <div class="container">
+        <p class="section-label">About</p>
+        <h2 class="section-title">Specialised in email HTML</h2>
+
+        <div class="about section-body">
+          <div class="about__text" data-reveal>
+            <p>
+              I build HTML email signatures and campaign templates that hold together across
+              every major email client — including Outlook Classic, which renders mail through
+              Microsoft Word's engine and breaks most modern CSS on contact.
+            </p>
+            <p>
+              Every line is written by hand. No templates, no drag-and-drop builders, no email
+              frameworks. Email is not the web with a smaller viewport: it is a set of rendering
+              engines with contradictory rules, and the work is understanding which constraint
+              applies where — why tables are still structural, why inline CSS is mandatory, and
+              why something flawless in a browser can collapse in an inbox.
+            </p>
+            <p>
+              The approach prioritises reliability and honest documentation. Each deliverable
+              ships with a record of what was built, why each technical decision was made, and
+              precisely what still needs verifying in the target client. I don't claim a client
+              is tested unless it has actually been tested.
+            </p>
+          </div>
+
+          <div data-reveal>
+            <p class="about__aside-title">Core expertise</p>
+            <ul class="pill-list">
+              <li class="pill pill--accent">HTML</li>
+              <li class="pill pill--accent">CSS</li>
+              <li class="pill pill--accent">Email HTML</li>
+              <li class="pill pill--accent">Outlook compatibility</li>
+              <li class="pill pill--accent">Responsive email</li>
+              <li class="pill pill--accent">Cross-client testing</li>
+              <li class="pill pill--accent">Rendering debugging</li>
+            </ul>
+
+            <p class="about__aside-title about__aside-title--spaced">Also working with</p>
+            <ul class="pill-list">
+              <li class="pill">Inline CSS</li>
+              <li class="pill">Table-based layouts</li>
+              <li class="pill">VML</li>
+              <li class="pill">MSO conditionals</li>
+              <li class="pill">Gmail quirks</li>
+              <li class="pill">Apple Mail</li>
+              <li class="pill">Dark mode email</li>
+              <li class="pill">Accessibility</li>
+              <li class="pill">Git</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- =======================================================
+         FEATURED WORK
+         ======================================================= -->
+    <section class="section section--raised" id="work">
+      <div class="container">
+        <p class="section-label">Featured Work</p>
+        <h2 class="section-title">Two email deliverables, built end to end</h2>
+        <p class="section-desc">
+          Self-initiated projects for a fictional Los Angeles technology consultancy. Both are
+          hand-written and architected around email client constraints rather than retro-fitted
+          to them.
+        </p>
+
+        <div class="section-body">
+
+          <!-- Project 1 -->
+          <article class="project" data-reveal>
+            <div class="project__stage">
+              <!-- Static mock-up. The real, live rendering is behind
+                   the "Browser preview" link below. -->
+              <div class="mock-inbox">
+                <div class="mock-inbox__header">
+                  From: <b>Alex Morgan &lt;alex.morgan@northstardigital.com&gt;</b>
+                </div>
+                <div class="mock-inbox__body">
+                  <p>Thank you for meeting with us. I've attached the preliminary assessment for your review.</p>
+                  <p>Best regards,</p>
+                  <div class="mock-sig">
+                    <div class="mock-sig__bar"></div>
+                    <div class="mock-sig__name">Alex Morgan</div>
+                    <div class="mock-sig__title">Senior Technology Consultant</div>
+                    <div class="mock-sig__company">Northstar Digital Solutions</div>
+                    <div class="mock-sig__rule"></div>
+                    <div class="mock-sig__contact">
+                      <span>P:</span>&nbsp; +1 (310) 555-0187<br />
+                      <span>E:</span>&nbsp; alex.morgan@northstardigital.com<br />
+                      <span>W:</span>&nbsp; www.northstardigital.com<br />
+                      <span>A:</span>&nbsp; 1234 Wilshire Blvd, Los Angeles, CA 90017
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="project__info">
+              <p class="project__type">01 — Corporate Email Signature</p>
+              <h3 class="project__title">Northstar Digital Solutions</h3>
+              <p class="project__desc">
+                A corporate signature for a technology consultancy. Table-based, fully inlined,
+                with every contact detail as live text so it stays readable when images are
+                blocked — which, in a corporate inbox, is the default.
+              </p>
+
+              <ul class="project__features">
+                <li>Table-based layout</li>
+                <li>Inline CSS throughout</li>
+                <li>MSO conditional comments</li>
+                <li>DPI handling for Outlook</li>
+                <li>Clickable phone (<code>tel:</code>)</li>
+                <li>Clickable email (<code>mailto:</code>)</li>
+                <li>Clickable website</li>
+                <li>Clickable address (Maps)</li>
+                <li>2× retina image assets</li>
+                <li>Alt text on every image</li>
+                <li>Email-safe font stack</li>
+                <li>Confidentiality notice</li>
+              </ul>
+
+              <div class="project__links">
+                <a class="btn btn--sm" href="../email-signature/preview/index.html">
+                  <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M1 8s2.5-4.5 7-4.5S15 8 15 8s-2.5 4.5-7 4.5S1 8 1 8Z" /><circle cx="8" cy="8" r="2" /></svg>
+                  Browser preview
+                </a>
+                <a class="btn btn--sm" href="../email-signature/dist/signature.html">
+                  <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" aria-hidden="true"><path d="M6 11 3 8l3-3M10 5l3 3-3 3" /></svg>
+                  Production build
+                </a>
+                <a class="btn btn--sm" href="../email-signature/src/signature.html">
+                  <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" aria-hidden="true"><path d="M3 3h10v10H3z" /><path d="M3 6h10" /></svg>
+                  Source
+                </a>
+              </div>
+            </div>
+          </article>
+
+          <!-- Project 2 -->
+          <article class="project" data-reveal>
+            <div class="project__stage project__stage--dark">
+              <div class="mock-ad">
+                <div class="mock-ad__inner">
+                  <div class="mock-ad__hero">600 × 300 HERO</div>
+                  <div class="mock-ad__content">
+                    <h4>Transform Your Business with Smarter Digital Solutions</h4>
+                    <p>We help businesses identify opportunities, streamline workflows, and build technology foundations that scale.</p>
+                    <span class="mock-ad__btn">Book a Free Consultation</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="project__info">
+              <p class="project__type">02 — Corporate Email Advertisement</p>
+              <h3 class="project__title">Promotional Campaign Email</h3>
+              <p class="project__desc">
+                A single-column promotional email with hero image, benefit list, and a
+                bulletproof CTA. Responsive below 620px, with an Outlook ghost table and a VML
+                button carrying the clients that ignore the media query entirely.
+              </p>
+
+              <ul class="project__features">
+                <li>600px centred layout</li>
+                <li>MSO ghost table wrapper</li>
+                <li>VML <code>roundrect</code> button</li>
+                <li>Hidden preheader text</li>
+                <li>Responsive media queries</li>
+                <li>Mobile gutter adjustments</li>
+                <li>Fluid hero image</li>
+                <li>Entity checkmarks, not icons</li>
+                <li>Descriptive alt text</li>
+                <li>Unsubscribe link</li>
+              </ul>
+
+              <div class="project__links">
+                <a class="btn btn--sm" href="../email-ad/preview/index.html">
+                  <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M1 8s2.5-4.5 7-4.5S15 8 15 8s-2.5 4.5-7 4.5S1 8 1 8Z" /><circle cx="8" cy="8" r="2" /></svg>
+                  Browser preview
+                </a>
+                <a class="btn btn--sm" href="../email-ad/dist/email-ad.html">
+                  <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" aria-hidden="true"><path d="M6 11 3 8l3-3M10 5l3 3-3 3" /></svg>
+                  Production build
+                </a>
+                <a class="btn btn--sm" href="../email-ad/src/email-ad.html">
+                  <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" aria-hidden="true"><path d="M3 3h10v10H3z" /><path d="M3 6h10" /></svg>
+                  Source
+                </a>
+              </div>
+            </div>
+          </article>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- =======================================================
+         TECHNICAL SKILLS
+         ======================================================= -->
+    <section class="section" id="skills">
+      <div class="container">
+        <p class="section-label">Technical Skills</p>
+        <h2 class="section-title">What I work with</h2>
+
+        <div class="skill-grid section-body" data-reveal>
+          <div class="skill-card">
+            <h3 class="skill-card__name">HTML</h3>
+            <p class="skill-card__detail">Semantic markup for the web; XHTML 1.0 Transitional for email output</p>
+          </div>
+          <div class="skill-card">
+            <h3 class="skill-card__name">CSS</h3>
+            <p class="skill-card__detail">Modern layout for the web, and the constrained subset email actually supports</p>
+          </div>
+          <div class="skill-card">
+            <h3 class="skill-card__name">Inline CSS</h3>
+            <p class="skill-card__detail">Not a preference — the only styling that survives every client intact</p>
+          </div>
+          <div class="skill-card">
+            <h3 class="skill-card__name">Table-based layouts</h3>
+            <p class="skill-card__detail">The structural foundation of email HTML, nested and spacing-controlled</p>
+          </div>
+          <div class="skill-card">
+            <h3 class="skill-card__name">Responsive email</h3>
+            <p class="skill-card__detail">Fluid images, media query overrides, and layouts that hold without them</p>
+          </div>
+          <div class="skill-card">
+            <h3 class="skill-card__name">Outlook compatibility</h3>
+            <p class="skill-card__detail">MSO conditionals, VML, ghost tables, DPI control, Word-engine workarounds</p>
+          </div>
+          <div class="skill-card">
+            <h3 class="skill-card__name">Gmail compatibility</h3>
+            <p class="skill-card__detail">Style stripping, class rewriting, and the 102KB clipping threshold</p>
+          </div>
+          <div class="skill-card">
+            <h3 class="skill-card__name">Apple Mail</h3>
+            <p class="skill-card__detail">WebKit rendering, retina asset strategy, dark mode colour inversion</p>
+          </div>
+          <div class="skill-card">
+            <h3 class="skill-card__name">Cross-client testing</h3>
+            <p class="skill-card__detail">Systematic verification passes with documented, reproducible results</p>
+          </div>
+          <div class="skill-card">
+            <h3 class="skill-card__name">Rendering debugging</h3>
+            <p class="skill-card__detail">Isolating which engine broke what, and finding the narrowest fix</p>
+          </div>
+          <div class="skill-card">
+            <h3 class="skill-card__name">Accessibility</h3>
+            <p class="skill-card__detail">Alt text, contrast ratios, reading order, and presentation-role tables</p>
+          </div>
+          <div class="skill-card">
+            <h3 class="skill-card__name">Dark mode email</h3>
+            <p class="skill-card__detail">Designing for forced colour inversion rather than fighting it</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- =======================================================
+         COMPATIBILITY
+         ======================================================= -->
+    <section class="section section--raised" id="compatibility">
+      <div class="container">
+        <p class="section-label">Compatibility</p>
+        <h2 class="section-title">Email client support</h2>
+        <p class="section-desc">
+          Both deliverables are architected for the clients below. The status column reports
+          design intent, not test results — see the note beneath the table.
+        </p>
+
+        <div class="section-body" data-reveal>
+          <div class="compat-scroll">
+            <table class="compat">
+              <caption class="visually-hidden">Email client support status for both deliverables</caption>
+              <thead>
+                <tr>
+                  <th scope="col">Email client</th>
+                  <th scope="col">Status</th>
+                  <th scope="col">Known degradation</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <th scope="row">Outlook Classic (2016–2021)</th>
+                  <td><span class="status status--partial">Designed for compatibility</span></td>
+                  <td>Square corners; <code>&lt;style&gt;</code> block discarded; VML button used</td>
+                </tr>
+                <tr>
+                  <th scope="row">Outlook New (Win / Mac)</th>
+                  <td><span class="status">Designed for compatibility</span></td>
+                  <td>Some embedded CSS stripped; inline styles carry the layout</td>
+                </tr>
+                <tr>
+                  <th scope="row">Gmail (Web)</th>
+                  <td><span class="status">Designed for compatibility</span></td>
+                  <td>Clips messages beyond ~102KB; both files are far below</td>
+                </tr>
+                <tr>
+                  <th scope="row">Gmail (Android / iOS)</th>
+                  <td><span class="status">Designed for compatibility</span></td>
+                  <td>Media queries honoured in the app, not in all webviews</td>
+                </tr>
+                <tr>
+                  <th scope="row">Apple Mail (macOS)</th>
+                  <td><span class="status">Designed for compatibility</span></td>
+                  <td>Dark mode may invert light backgrounds automatically</td>
+                </tr>
+                <tr>
+                  <th scope="row">iPhone Mail (iOS)</th>
+                  <td><span class="status">Designed for compatibility</span></td>
+                  <td>None anticipated; full CSS support</td>
+                </tr>
+                <tr>
+                  <th scope="row">Yahoo Mail</th>
+                  <td><span class="status status--partial">Designed for compatibility</span></td>
+                  <td>Historically adds table spacing; mitigated, not eliminated</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+
+          <p class="compat__note">
+            <strong>What “designed for compatibility” means:</strong> the HTML architecture,
+            CSS approach, and rendering workarounds follow each client's documented constraints.
+            No live client testing has been performed on these files, so nothing here is claimed
+            as tested. Final verification is required in each target client before production
+            deployment — the procedure is written up in <code>docs/TESTING.md</code>.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- =======================================================
+         PROCESS
+         ======================================================= -->
+    <section class="section" id="process">
+      <div class="container">
+        <p class="section-label">Workflow</p>
+        <h2 class="section-title">Development process</h2>
+        <p class="section-desc">
+          The same eight steps on every email project, from design interpretation through to
+          documented delivery.
+        </p>
+
+        <div class="process section-body" data-reveal>
+          <div class="process__step">
+            <h3>Design interpretation</h3>
+            <p>Read the design and mark every element that needs an email-specific implementation rather than a web one.</p>
+          </div>
+          <div class="process__step">
+            <h3>Structure first</h3>
+            <p>Build the table skeleton and prove the spacing before a single colour or font is applied.</p>
+          </div>
+          <div class="process__step">
+            <h3>Inline the styling</h3>
+            <p>Move every declaration onto the element that needs it, with email-safe fonts and explicit dimensions.</p>
+          </div>
+          <div class="process__step">
+            <h3>Outlook workarounds</h3>
+            <p>Add MSO conditionals, ghost tables, VML fallbacks, and DPI control where the Word engine demands them.</p>
+          </div>
+          <div class="process__step">
+            <h3>Responsive behaviour</h3>
+            <p>Add media queries as enhancement, then verify the layout still reads correctly with them stripped out.</p>
+          </div>
+          <div class="process__step">
+            <h3>Degradation checks</h3>
+            <p>Block the images, disable the style block, and confirm the message still communicates everything essential.</p>
+          </div>
+          <div class="process__step">
+            <h3>Cross-client verification</h3>
+            <p>Render across the target clients, record what differs, and fix only what genuinely warrants fixing.</p>
+          </div>
+          <div class="process__step">
+            <h3>Documented delivery</h3>
+            <p>Ship the production file with installation steps, known limitations, and an explicit list of what remains unverified.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- =======================================================
+         CASE STUDY
+         ======================================================= -->
+    <section class="section section--raised" id="case-study">
+      <div class="container">
+        <p class="section-label">Case Study</p>
+        <h2 class="section-title">Northstar Digital Solutions</h2>
+        <p class="section-desc">
+          What the brief demanded, which constraints bit hardest, and the specific decision made
+          at each one.
+        </p>
+
+        <div class="section-body">
+          <div class="case" data-reveal>
+            <div class="case__block">
+              <p class="case__label">Brief</p>
+              <p>
+                A corporate signature and a campaign email for a technology consultancy whose
+                clients sit largely in enterprise environments — meaning Outlook on Windows, with
+                images blocked by default and IT policies nobody will change for an email.
+              </p>
+            </div>
+            <div class="case__block">
+              <p class="case__label">Constraint</p>
+              <p>
+                Outlook Classic renders through Microsoft Word. No flexbox, no grid, no
+                <code>max-width</code>, no <code>border-radius</code>, and the entire
+                <code>&lt;style&gt;</code> block discarded — including every media query.
+              </p>
+              <p>
+                Anything that only works because a media query fired is, in that environment,
+                something that does not work.
+              </p>
+            </div>
+            <div class="case__block">
+              <p class="case__label">Approach</p>
+              <p>
+                Build the layout so it is already correct with zero CSS support, then add
+                enhancement on top. Media queries improve mobile; they are never load-bearing.
+                Every piece of contact information is live text, never baked into an image.
+              </p>
+            </div>
+          </div>
+
+          <div class="case__log" data-reveal>
+            <div class="case__entry case__entry--head">
+              <div class="case__num">#</div>
+              <div class="case__problem">Problem</div>
+              <div class="case__solution">Decision</div>
+            </div>
+
+            <div class="case__entry">
+              <div class="case__num">01</div>
+              <div class="case__problem">Outlook ignores <code>max-width</code> and <code>margin: auto</code>, so the 600px card refused to centre.</div>
+              <div class="case__solution">Wrapped the card in an MSO-only ghost table at a fixed <code>width="600"</code>. Outlook obeys the table; every other client never sees it.</div>
+            </div>
+
+            <div class="case__entry">
+              <div class="case__num">02</div>
+              <div class="case__problem">A padded <code>&lt;a&gt;</code> button collapses to plain text in Outlook, losing the clickable area.</div>
+              <div class="case__solution">Added a <code>&lt;v:roundrect&gt;</code> VML button with <code>&lt;w:anchorlock/&gt;</code> so the whole shape stays clickable, hidden from other clients by conditional comments.</div>
+            </div>
+
+            <div class="case__entry">
+              <div class="case__num">03</div>
+              <div class="case__problem">Corporate gateways block images by default, which would have hidden the contact details entirely.</div>
+              <div class="case__solution">Kept every contact field as live text and used HTML entity checkmarks rather than icon images. With images off, nothing essential is lost.</div>
+            </div>
+
+            <div class="case__entry">
+              <div class="case__num">04</div>
+              <div class="case__problem">Word's rendering engine upscales images on high-DPI Windows displays, blurring the logo.</div>
+              <div class="case__solution">Set <code>&lt;o:PixelsPerInch&gt;96&lt;/o:PixelsPerInch&gt;</code> and <code>&lt;o:AllowPNG/&gt;</code>, and served 2× assets at half their pixel dimensions.</div>
+            </div>
+
+            <div class="case__entry">
+              <div class="case__num">05</div>
+              <div class="case__problem">Nested tables produced phantom gaps that appeared in Outlook but in no browser.</div>
+              <div class="case__solution">Applied <code>border-collapse: collapse</code> with <code>mso-table-lspace</code> and <code>mso-table-rspace</code> set to <code>0pt</code> on every table.</div>
+            </div>
+
+            <div class="case__entry">
+              <div class="case__num">06</div>
+              <div class="case__problem">The original signature applied <code>white-space: nowrap</code> to the street address, forcing horizontal overflow on narrow phones.</div>
+              <div class="case__solution">Restricted <code>nowrap</code> to the phone, email, and URL rows, where breaking mid-value genuinely hurts. The address is allowed to wrap.</div>
+            </div>
+
+            <div class="case__entry">
+              <div class="case__num">07</div>
+              <div class="case__problem">Placeholder image services are a live third-party dependency — one that had already gone dark, leaving broken images throughout.</div>
+              <div class="case__solution">Replaced every placeholder with real first-party assets generated from SVG sources and committed to the repository.</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- =======================================================
+         CONTACT
+         ======================================================= -->
+    <section class="section" id="contact">
+      <div class="container">
+        <p class="section-label">Contact</p>
+        <h2 class="section-title">Let's build something that renders</h2>
+
+        <div class="contact section-body">
+          <div class="contact__text" data-reveal>
+            <p>
+              Available for HTML email signature work, campaign email templates, and rescuing
+              existing templates that break somewhere between the design and the inbox.
+            </p>
+            <p>
+              If you already know which client is misbehaving, send the file and a screenshot —
+              that usually narrows it down faster than anything else.
+            </p>
+          </div>
+
+          <div class="contact__card" data-reveal>
+            <div class="contact__row">
+              <span class="contact__key">Email</span>
+              <a class="contact__value" href="mailto:egronit42@gmail.com">egronit42@gmail.com</a>
+            </div>
+            <div class="contact__row">
+              <span class="contact__key">GitHub</span>
+              <a class="contact__value" href="https://github.com/" target="_blank" rel="noopener">github.com</a>
+            </div>
+            <div class="contact__row">
+              <span class="contact__key">LinkedIn</span>
+              <a class="contact__value" href="https://www.linkedin.com/" target="_blank" rel="noopener">linkedin.com</a>
+            </div>
+            <div class="contact__row">
+              <span class="contact__key">Based in</span>
+              <span class="contact__value">Kosovo — working remotely</span>
+            </div>
+
+            <button class="contact__copy" type="button" data-copy="egronit42@gmail.com">
+              <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="5.5" y="5.5" width="8" height="8" rx="1.5" /><path d="M10.5 3.5V3a1 1 0 0 0-1-1H3a1 1 0 0 0-1 1v6.5a1 1 0 0 0 1 1h.5" /></svg>
+              <span data-copy-label>Copy email address</span>
+            </button>
+            <p class="visually-hidden" role="status" aria-live="polite" data-copy-status></p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- =========================================================
+       FOOTER
+       ========================================================= -->
+  <footer class="footer">
+    <div class="container footer__inner">
+      <p class="footer__text">
+        Built by Niko (Egronit Gaxherri) — HTML Email Developer<br />
+        Hand-coded HTML, CSS and vanilla JavaScript. No frameworks.
+      </p>
+      <nav class="footer__links" aria-label="Footer">
+        <a href="https://github.com/" target="_blank" rel="noopener">GitHub</a>
+        <a href="https://www.linkedin.com/" target="_blank" rel="noopener">LinkedIn</a>
+        <a href="mailto:egronit42@gmail.com">Email</a>
+      </nav>
+    </div>
+  </footer>
+
+</body>
+</html>

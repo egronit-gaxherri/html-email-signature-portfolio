@@ -1,0 +1,143 @@
+<!--
+  ============================================================
+  Corporate Email Advertisement — SOURCE / DEVELOPMENT VERSION
+  Northstar Digital Solutions
+  Developer: Niko (Egronit Gaxherri)
+  ============================================================
+
+  DO NOT SEND THIS FILE.
+
+  Readable authoring version: structure here, styling in
+  email-ad.css. Email clients strip <link>, so this renders
+  unstyled in an inbox.
+
+  The file that ships is ../dist/email-ad.html — same structure,
+  every rule hand-inlined, plus the MSO ghost table, the VML
+  button, and the embedded media-query block.
+
+  Keep the two in sync. See docs/DEPLOYMENT.md.
+  ============================================================
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Email Advertisement (source) — Northstar Digital Solutions</title>
+  <link rel="stylesheet" href="email-ad.css" />
+</head>
+<body>
+
+  <!-- Inbox preview text — hidden in the message body -->
+  <div class="preheader">Smarter digital strategies that drive measurable results. Let's transform your business together.</div>
+
+  <!-- Full-bleed canvas -->
+  <table class="canvas" role="presentation" cellpadding="0" cellspacing="0" border="0" width="100%">
+    <tr>
+      <td class="canvas__cell" align="center">
+
+        <!-- 600px email card -->
+        <table class="email" role="presentation" cellpadding="0" cellspacing="0" border="0" width="600" align="center">
+
+          <!-- Header -->
+          <tr>
+            <td class="header mobile-padding">
+              <!-- 2x asset (320x80) displayed at 160x40 -->
+              <img class="header__logo" src="assets/northstar-wordmark-320.png" alt="Northstar Digital Solutions" width="160" height="40" />
+            </td>
+          </tr>
+
+          <!-- Hero -->
+          <tr>
+            <td class="hero">
+              <!-- 2x asset (1200x600) displayed at 600x300 -->
+              <img class="hero__img" src="assets/hero-1200.png" alt="Abstract data visualisation representing digital transformation: an upward trend line over a grid" width="600" height="300" />
+            </td>
+          </tr>
+
+          <!-- Headline -->
+          <tr>
+            <td class="headline-row mobile-padding">
+              <h1 class="headline">Transform Your Business with Smarter Digital Solutions</h1>
+            </td>
+          </tr>
+
+          <!-- Body copy -->
+          <tr>
+            <td class="body-row mobile-padding">
+              <p class="body-copy">Every organisation has untapped potential in its digital operations. At Northstar Digital Solutions, we help businesses in Los Angeles and across the country identify opportunities, streamline workflows, and build technology foundations that scale.</p>
+              <p class="body-copy body-copy--last">Whether you need to modernise a legacy system, optimise your cloud infrastructure, or develop a data strategy that drives real decisions &mdash; our team brings hands-on experience and a consultative approach to every engagement.</p>
+            </td>
+          </tr>
+
+          <!-- Benefits — entity checkmarks, no images -->
+          <tr>
+            <td class="benefits-row mobile-padding">
+              <table role="presentation" cellpadding="0" cellspacing="0" border="0" width="100%">
+                <tr>
+                  <td class="benefit"><span class="benefit__check">&#10003;</span>&nbsp;&nbsp;<strong>Technology Consulting</strong> &mdash; Strategic guidance for digital transformation</td>
+                </tr>
+                <tr>
+                  <td class="benefit"><span class="benefit__check">&#10003;</span>&nbsp;&nbsp;<strong>Cloud Architecture</strong> &mdash; Scalable, secure infrastructure design</td>
+                </tr>
+                <tr>
+                  <td class="benefit"><span class="benefit__check">&#10003;</span>&nbsp;&nbsp;<strong>Data &amp; Analytics</strong> &mdash; Actionable insights from your business data</td>
+                </tr>
+                <tr>
+                  <td class="benefit benefit--last"><span class="benefit__check">&#10003;</span>&nbsp;&nbsp;<strong>Process Automation</strong> &mdash; Reduce manual work, increase accuracy</td>
+                </tr>
+              </table>
+            </td>
+          </tr>
+
+          <!-- CTA (VML fallback lives in dist/ only) -->
+          <tr>
+            <td class="cta-row mobile-padding">
+              <table role="presentation" cellpadding="0" cellspacing="0" border="0">
+                <tr>
+                  <td class="cta__shell">
+                    <a class="cta__link" href="https://www.northstardigital.com/contact" target="_blank" rel="noopener">Book a Free Consultation</a>
+                  </td>
+                </tr>
+              </table>
+            </td>
+          </tr>
+
+          <!-- Divider -->
+          <tr>
+            <td class="divider-row mobile-padding">
+              <table role="presentation" cellpadding="0" cellspacing="0" border="0" width="100%">
+                <tr><td class="divider">&nbsp;</td></tr>
+              </table>
+            </td>
+          </tr>
+
+          <!-- Footer -->
+          <tr>
+            <td class="footer-row mobile-padding">
+              <table role="presentation" cellpadding="0" cellspacing="0" border="0" width="100%">
+                <tr>
+                  <td class="footer">
+                    Northstar Digital Solutions<br />
+                    1234 Wilshire Blvd, Los Angeles, CA 90017<br />
+                    <a class="footer__link" href="tel:+13105550187">+1 (310) 555-0187</a>&nbsp;&nbsp;|&nbsp;&nbsp;<a class="footer__link--brand" href="https://www.northstardigital.com" target="_blank" rel="noopener">northstardigital.com</a>
+                  </td>
+                </tr>
+                <tr>
+                  <td class="footer-legal">
+                    You received this email because you are a valued contact of Northstar Digital Solutions.
+                    <a href="https://www.northstardigital.com/unsubscribe">Unsubscribe</a>
+                  </td>
+                </tr>
+              </table>
+            </td>
+          </tr>
+
+        </table>
+
+      </td>
+    </tr>
+  </table>
+
+</body>
+</html>
